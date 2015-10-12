@@ -1,6 +1,5 @@
 # androidBase
 androidBase
- * 入口类
  * 野生程序猿的入门记录
  * 请大神们自动忽略
  * 仅此作为学习记录自用
