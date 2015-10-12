@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AndroidBase</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_list">目录列表</string>
+    <string name="loadWeb">HttpUrlConnection加载网页</string>
+    <string name="loadPic">HttpUrlConnection加载网络图片</string>
+    <string name="getMethod">HttpUrlConnection-Get请求</string>
+    <string name="postMethod">HttpUrlConnection-Post请求</string>
+    <string name="name">姓名:</string>
+    <string name="hintName">zhangsan</string>
+    <string name="age">年龄:</string>
+    <string name="hintAge">21</string>
+    <string name="submit">提交</string>
+    <string name="response">服务端返回:</string>
+</resources>
