@@ -8,3 +8,6 @@ androidBase
  * 日志使用LogUtils开源框架记录
  * 后期会不定期的加入一些优秀的开源框架，作为学习之用.
  * 再此向前辈们致敬，感谢开源！
+
+
+ *HTTP通信部分，简单的搭建了一个服务端，tomcat+servlet,来演示Post和Get请求的情况。
