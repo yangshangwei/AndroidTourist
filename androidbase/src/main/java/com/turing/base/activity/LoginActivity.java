@@ -6,7 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.turing.base.R;
-import com.turing.base.http.HttpThreadDiffMethod;
+import com.turing.base.http.HttpThreadGetMethod;
+import com.turing.base.http.HttpThreadPostMethod;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -40,10 +41,20 @@ public class LoginActivity extends Activity {
     private Handler handler = new Handler();
 
 
-    @Click(R.id.id_btn_submit)
-    public void submitData() {
+    @Click(R.id.id_btn_get_submit)
+    public void getSubmitData() {
         // 开启子线程 进行网络请求的耗时操作
-        new HttpThreadDiffMethod(
+        new HttpThreadGetMethod(
+                et_name.getText().toString(),
+                et_age.getText().toString(),
+                url ,handler, et_response).start();
+    }
+
+
+    @Click(R.id.id_btn_post_submit)
+    public void postSubmitData() {
+        // 开启子线程 进行网络请求的耗时操作
+        new HttpThreadPostMethod(
                 et_name.getText().toString(),
                 et_age.getText().toString(),
                 url ,handler, et_response).start();
