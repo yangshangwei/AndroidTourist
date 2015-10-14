@@ -13,13 +13,13 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 
 /**
  * MyApp
  *
  * @author Mr.Yang on 2015/10/13  00:06.
  * @version 1.0
- * @desc
  */
 public class HttpThreadPostMethod extends Thread {
 
@@ -46,6 +46,10 @@ public class HttpThreadPostMethod extends Thread {
      */
     void doPost() {
         try {
+            // 列出手机操作系统的默认输出流  只是要看下Post方法中 是以何种编码提交的 --file.encoding=UTF-8
+            Properties properties = System.getProperties();
+            properties.list(System.out);
+
             URL httpUrl = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) httpUrl.openConnection();
             connection.setRequestMethod("POST");
@@ -53,9 +57,9 @@ public class HttpThreadPostMethod extends Thread {
 
             // POST的方式是以form data的方式向服务端提交请求数据 ,首先获取输出流（以请求为出发点，向服务端发送数据，故为输出流）
             OutputStream out = connection.getOutputStream();
-            // 封装参数
+            // 封装请求中传递的参数
             String content = "name=" + name + "&age=" + age;
-            //转换为直接写入输出流
+            //获取参数的直接 存入输出流
             out.write(content.getBytes());
 
             // 获取服务端返回的输入流

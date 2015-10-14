@@ -9,9 +9,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * MyApp
@@ -42,7 +44,13 @@ public class HttpThreadGetMethod extends Thread {
      * Get请求方式   URL中可见参数
      */
     void doGet() {
-        url = url + "?name=" + name + "&age=" + age;
+        try {
+            // GET 方式的参数存放在请求的url中，手机端请求的默认编码为utf-8，对于url中包含汉字的变量，要进行转码的操作，防止乱码
+            url = url + "?name=" + URLEncoder.encode(name, "utf-8") + "&age=" + age;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
 
         try {
             URL httpUrl = new URL(url);
