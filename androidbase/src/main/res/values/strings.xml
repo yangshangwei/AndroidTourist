@@ -9,7 +9,7 @@
     <string name="getMethod">HttpUrlConnection-Get请求</string>
     <string name="postMethod">HttpUrlConnection-Post请求</string>
     <string name="name">姓名:</string>
-    <string name="hintName">zhangsan</string>
+    <string name="hintName">打野</string>
     <string name="age">年龄:</string>
     <string name="hintAge">21</string>
     <string name="get_submit">GET请求</string>

@@ -32,9 +32,11 @@ public class LoginActivity extends Activity {
     @ViewById(R.id.id_et_response)
     EditText et_response ;
 
-    @ViewById(R.id.id_btn_submit)
-    Button btn_submit ;
+    @ViewById(R.id.id_btn_get_submit)
+    Button btn_GetSubmit ;
 
+    @ViewById(R.id.id_btn_post_submit)
+    Button btn_PostSubmit ;
 
 
     private String url = "http://192.168.1.106:8080/HttpService/MyServlet";
