@@ -26,23 +26,23 @@ import org.androidannotations.annotations.ViewById;
 @EActivity(R.layout.activity_http)
 public class HttpActivity extends Activity {
     @ViewById(R.id.id_btn_loadWeb)
-    Button btn_loadWeb ;
+    Button btn_loadWeb;
     @ViewById(R.id.id_btn_loadPic)
-    Button btn_loadPic ;
+    Button btn_loadPic;
 
-    @ViewById(R.id.id_btn_getMethod)
-    Button btn_Get ;
-    @ViewById(R.id.id_btn_postMethod)
-    Button btn_Post ;
+    @ViewById(R.id.id_btn_httpUrlConnectionOper)
+    Button btn_HttpUrlConnection_GetPost;
+    @ViewById(R.id.id_btn_HttpClientOper)
+    Button btn_HttpUrlClient_GetPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-    @Click({R.id.id_btn_loadWeb,R.id.id_btn_loadPic,R.id.id_btn_getMethod,R.id.id_btn_postMethod})
-    public void loadByURL(View clickedView){
-        switch (clickedView.getId()){
+    @Click({R.id.id_btn_loadWeb, R.id.id_btn_loadPic, R.id.id_btn_httpUrlConnectionOper, R.id.id_btn_HttpClientOper})
+    public void loadByURL(View clickedView) {
+        switch (clickedView.getId()) {
             case R.id.id_btn_loadWeb:
                 LogUtils.d("loadWeb Button is clicked");
                 startActivity(new Intent(this, LoadWebActivity_.class));
@@ -51,20 +51,19 @@ public class HttpActivity extends Activity {
                 LogUtils.d("loadPic Button is clicked");
                 startActivity(new Intent(this, LoadPicActivity_.class));
                 break;
-            case R.id.id_btn_getMethod:
+            case R.id.id_btn_httpUrlConnectionOper:
                 // 向自建的服务端通过Get的方式请求 其实就是一个servlet+tomcat搭建的超级入门的login，提交显示，仅仅为了演示demo 仅此而已
                 // 不能在UI线程做访问网络的耗时操作，切记！
                 // 跳转到登陆页面，输入姓名和年龄，点击提交时，开启子线程访问网络
                 startActivity(new Intent(this, LoginActivity_.class));
                 break;
-            case R.id.id_btn_postMethod:
+            case R.id.id_btn_HttpClientOper:
                 startActivity(new Intent(this, LoginActivity_.class));
                 break;
             default:
                 break;
         }
     }
-
 
 
 }

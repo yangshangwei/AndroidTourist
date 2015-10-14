@@ -21,16 +21,16 @@
     android:text="@string/loadPic" />
 
     <Button
-        android:id="@+id/id_btn_getMethod"
+        android:id="@+id/id_btn_httpUrlConnectionOper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/getMethod" />
+        android:text="@string/GetAndPostMethod" />
 
     <Button
-        android:id="@+id/id_btn_postMethod"
+        android:id="@+id/id_btn_HttpClientOper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/postMethod" />
+        android:text="@string/GetAndPostMethodHttpClient" />
 </LinearLayout>

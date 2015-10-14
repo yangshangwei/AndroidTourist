@@ -3,8 +3,12 @@ apply plugin: 'android-apt'
 def AAVersion = '3.3.2'
 
 android {
+
+    useLibrary 'org.apache.http.legacy'
+
     compileSdkVersion 23
     buildToolsVersion "22.0.1"
+
 
     defaultConfig {
         applicationId "com.turing.base"
@@ -28,6 +32,7 @@ dependencies {
 
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
+
 }
 
 apt {

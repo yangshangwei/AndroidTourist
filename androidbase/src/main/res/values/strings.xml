@@ -6,13 +6,15 @@
     <string name="menu_list">目录列表</string>
     <string name="loadWeb">HttpUrlConnection加载网页</string>
     <string name="loadPic">HttpUrlConnection加载网络图片</string>
-    <string name="getMethod">HttpUrlConnection-Get请求</string>
-    <string name="postMethod">HttpUrlConnection-Post请求</string>
+    <string name="GetAndPostMethod">HttpUrlConnection-Get/Post请求</string>
     <string name="name">姓名:</string>
-    <string name="hintName">打野</string>
+    <string name="hintName">野猴子</string>
     <string name="age">年龄:</string>
     <string name="hintAge">21</string>
-    <string name="get_submit">GET请求</string>
-    <string name="post_submit">POST请求</string>
+    <string name="get_submit">HttpUrlConnection-GET请求</string>
+    <string name="post_submit">HttpUrlConnection-POST请求</string>
     <string name="response">服务端返回:</string>
+    <string name="GetAndPostMethodHttpClient">HttpClient-Get/Post请求</string>
+    <string name="hc_get">HttpClient-Get请求</string>
+    <string name="hc_post">HttpClient-Post请求</string>
 </resources>
