@@ -2,35 +2,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
+    android:layout_margin="2dp"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="2dp">
 
     <Button
         android:id="@+id/id_btn_loadWeb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="@string/loadWeb" />
 
     <Button
-    android:id="@+id/id_btn_loadPic"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:text="@string/loadPic" />
+        android:id="@+id/id_btn_loadPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="@string/loadPic" />
 
     <Button
         android:id="@+id/id_btn_httpUrlConnectionOper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="@string/GetAndPostMethod" />
 
     <Button
         android:id="@+id/id_btn_HttpClientOper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="@string/GetAndPostMethodHttpClient" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_JsonModule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="@string/json" />
+
+        <Button
+            android:id="@+id/id_btn_XmlModule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="@string/xml" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id_btn_multiThread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="@string/mulitDownLoad" />
+
+    <Button
+        android:id="@+id/id_btn_httpUpLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="@string/httpUpLoad" />
+
+    <Button
+        android:id="@+id/id_btn_httpClientUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="@string/httpClientUpload" />
 </LinearLayout>

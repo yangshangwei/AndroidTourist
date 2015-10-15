@@ -17,4 +17,9 @@
     <string name="GetAndPostMethodHttpClient">HttpClient-Get/Post请求</string>
     <string name="hc_get">HttpClient-Get请求</string>
     <string name="hc_post">HttpClient-Post请求</string>
+    <string name="json">JSON解析</string>
+    <string name="xml">XML解析</string>
+    <string name="httpUpLoad">Http方式上传图片</string>
+    <string name="httpClientUpload">HttpClient上传图片</string>
+    <string name="mulitDownLoad">多线程下载</string>
 </resources>

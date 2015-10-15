@@ -40,7 +40,6 @@ public class HttpThreadPostMethod extends Thread {
         doPost();
     }
 
-
     /**
      * Post方法
      */
