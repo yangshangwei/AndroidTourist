@@ -7,9 +7,14 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.apkfuns.logutils.LogUtils;
 import com.turing.base.R;
 import com.turing.base.adapter.ShowJsonAdapter;
 import com.turing.base.beans.ShowJsonBean;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,8 +42,9 @@ public class HttpShowJson extends Thread {
     private LayoutInflater inflater;
 
 
-    private ListView listView ;
+    private ListView listView;
     private List<ShowJsonBean> data = new ArrayList<ShowJsonBean>();
+
     /**
      * 构造函数
      *
@@ -82,21 +88,19 @@ public class HttpShowJson extends Thread {
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
             }
-            //
-
+            // 将获取的JSON格式的数据 转化为JavaBean
+            json2bean(sb.toString());
 
             // 通过Handler更新主线程的UI
             handler.post(new Runnable() {
                 @Override
                 public void run() {
 
-
-
                     // 将布局文件转换为视图
                     View view = HttpShowJson.this.inflater.inflate(R.layout.activity_show_original_json, null);
 
                     // 查找ListView
-                    listView = (ListView)view.findViewById(R.id.id_lv_showJson);
+                    listView = (ListView) view.findViewById(R.id.id_lv_showJson);
                     // 实例化适配器
                     ShowJsonAdapter jsonAdapter = new ShowJsonAdapter(context);
                     // 设置适配器
@@ -112,6 +116,43 @@ public class HttpShowJson extends Thread {
             e.printStackTrace();
         } catch (IOException e1) {
             e1.printStackTrace();
+        }
+    }
+
+    /**
+     * 将服务端获取的JSON数据 转换为Bean实体数据
+     *
+     * @param jsonData
+     */
+    private void json2bean(String jsonData) {
+        LogUtils.d("jsonData:" + jsonData);
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            String result = jsonObject.getString("result");
+            LogUtils.d("result:" + result);
+            // result = 1成功
+            if ("" != result && "1".equals(result)) {
+                JSONArray personJsonArray = jsonObject.getJSONArray("personData");
+                // 遍历personJsonArray
+                for (int i = 0; i < personJsonArray.length(); i++) {
+                    JSONObject personJson = personJsonArray.getJSONObject(i);
+                    String name = personJson.getString("name");
+                    String age = personJson.getString("age");
+                    String url = personJson.getString("url");
+                    LogUtils.d("name:" + name + ",age:" + age + ",url:" + url);
+                    // 获取学校 数字
+                    JSONArray schoolJsonArray = personJson.getJSONArray("schoolInfo");
+                    for (int j = 0; j < schoolJsonArray.length(); j++) {
+                        JSONObject schoolJsonObject = schoolJsonArray.getJSONObject(j);
+                        String schoolName = schoolJsonObject.getString("name");
+                        LogUtils.d("schoolName" + schoolName);
+                    }
+                }
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 }
