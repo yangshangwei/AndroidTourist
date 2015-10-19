@@ -22,4 +22,9 @@
     <string name="httpUpLoad">Http方式上传图片</string>
     <string name="httpClientUpload">HttpClient上传图片</string>
     <string name="mulitDownLoad">多线程下载</string>
+    <string name="title_activity_json">JsonActivity</string>
+    <string name="getJson">Get-Json</string>
+    <string name="showJson">ShowJson</string>
+    <string name="clearJson">ClearJson</string>
+    <string name="result">结果信息:</string>
 </resources>
