@@ -52,7 +52,7 @@ public class LoginActivity extends Activity {
     Button Btn_hc_post;
 
 
-    private String url = "http://192.168.1.106:8080/HttpService/MyServlet";
+    private String url = "http://192.168.1.105:8080/HttpService/MyServlet";
     private Handler handler = new Handler();
 
 
@@ -85,7 +85,7 @@ public class LoginActivity extends Activity {
             e.printStackTrace();
         }
         new HttpClientThread_Get(url, handler, et_response).start();
-        url = "http://192.168.1.106:8080/HttpService/MyServlet" ;
+        url = "http://192.168.1.105:8080/HttpService/MyServlet" ;
         LogUtils.d("调用结束，url还原为初始的url");
     }
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/id_iv_showJson_url"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/flag_mark_yellow" />
+
+    <TextView
+        android:id="@+id/id_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@+id/id_iv_showJson_url"
+        android:gravity="center"
+        android:text="姓名" />
+
+    <TextView
+        android:id="@+id/id_tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/id_tv_name"
+        android:layout_toRightOf="@+id/id_iv_showJson_url"
+        android:gravity="center"
+        android:text="年龄" />
+
+    <TextView
+        android:id="@+id/id_tv_school1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/id_tv_age"
+        android:layout_toRightOf="@+id/id_iv_showJson_url"
+        android:gravity="center"
+        android:text="学校1" />
+
+    <TextView
+        android:id="@+id/id_tv_school2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/id_tv_school1"
+        android:layout_toRightOf="@+id/id_iv_showJson_url"
+        android:gravity="center"
+        android:text="学校2" />
+</RelativeLayout>
