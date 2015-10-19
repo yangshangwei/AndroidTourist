@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 import com.apkfuns.logutils.LogUtils;
 import com.turing.base.R;
 import com.turing.base.adapter.ShowJsonAdapter;
+import com.turing.base.beans.Person;
+import com.turing.base.beans.School;
 import com.turing.base.beans.ShowJsonBean;
 
 import org.json.JSONArray;
@@ -24,6 +26,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -89,8 +92,12 @@ public class HttpShowJson extends Thread {
                 sb.append(line);
             }
             // 将获取的JSON格式的数据 转化为JavaBean
-            json2bean(sb.toString());
-
+            final List<Person> personList = json2bean(sb.toString());
+            LogUtils.d("size:" +personList.size());
+            // 遍历
+            for(Iterator it2 = personList.iterator();it2.hasNext();){
+                LogUtils.d("遍历list中的元素:" + it2.next());
+            }
             // 通过Handler更新主线程的UI
             handler.post(new Runnable() {
                 @Override
@@ -102,7 +109,7 @@ public class HttpShowJson extends Thread {
                     // 查找ListView
                     listView = (ListView) view.findViewById(R.id.id_lv_showJson);
                     // 实例化适配器
-                    ShowJsonAdapter jsonAdapter = new ShowJsonAdapter(context);
+                    ShowJsonAdapter jsonAdapter = new ShowJsonAdapter(context,personList);
                     // 设置适配器
                     listView.setAdapter(jsonAdapter);
 
@@ -120,39 +127,96 @@ public class HttpShowJson extends Thread {
     }
 
     /**
-     * 将服务端获取的JSON数据 转换为Bean实体数据
+     * 将服务端获取的JSON数据 转换为Bean实体数据 ,返回personList供后续调用
      *
      * @param jsonData
      */
-    private void json2bean(String jsonData) {
-        LogUtils.d("jsonData:" + jsonData);
+    private List<Person>  json2bean(String jsonData) {
+
         try {
             JSONObject jsonObject = new JSONObject(jsonData);
             String result = jsonObject.getString("result");
-            LogUtils.d("result:" + result);
+
             // result = 1成功
             if ("" != result && "1".equals(result)) {
                 JSONArray personJsonArray = jsonObject.getJSONArray("personData");
+
+                List<Person> personList = new ArrayList<Person>();
                 // 遍历personJsonArray
                 for (int i = 0; i < personJsonArray.length(); i++) {
+
                     JSONObject personJson = personJsonArray.getJSONObject(i);
+
                     String name = personJson.getString("name");
                     String age = personJson.getString("age");
                     String url = personJson.getString("url");
                     LogUtils.d("name:" + name + ",age:" + age + ",url:" + url);
+
+                    Person person = new Person();
+                    person.setName(name);
+                    person.setAge(age);
+                    person.setUrl(url);
+
+                    List<School> schoolList = new ArrayList<School>();
+
+                    person.setSchoolList(schoolList);
+
+                    personList.add(person);
                     // 获取学校 数字
                     JSONArray schoolJsonArray = personJson.getJSONArray("schoolInfo");
                     for (int j = 0; j < schoolJsonArray.length(); j++) {
                         JSONObject schoolJsonObject = schoolJsonArray.getJSONObject(j);
                         String schoolName = schoolJsonObject.getString("name");
                         LogUtils.d("schoolName" + schoolName);
+
+                        School school = new School();
+                        school.setName(schoolName);
+                        schoolList.add(school);
                     }
                 }
+                return personList ;
+            }else{
+                // TODO
             }
-
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        LogUtils.d("发生了异常,返回null");
+        return null ;
     }
 }
+/**
+ *
+ * {
+ "result": "1",
+ "personData": [
+     {
+     "name": "Jack",
+     "url": "http://f8.topit.me/8/d3/36/110211575441036d38l.jpg",
+     "age": "20",
+     "schoolInfo": [
+         {
+         "name": "清华本科"
+         },
+         {
+         "name": "北大研究生"
+         }
+        ]
+     },
+     {
+     "name": "Tom",
+     "url": "http://pic.pp3.cn/uploads//201407/1402453425452.jpg",
+     "age": "10",
+     "schoolInfo": [
+         {
+         "name": "人大本科"
+         },
+         {
+         "name": "浙大研究生"
+         }
+        ]
+     }
+     ]
+ }
+ **/

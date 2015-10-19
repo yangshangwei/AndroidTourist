@@ -15,6 +15,8 @@ public class ShowJsonBean {
     private String name;
     private String age;
     private String school1;
+    private String school2;
+
 
     public String getSchool1() {
         return school1;
@@ -32,7 +34,6 @@ public class ShowJsonBean {
         this.school2 = school2;
     }
 
-    private String school2;
 
     public int getImageId() {
         return imageId;
