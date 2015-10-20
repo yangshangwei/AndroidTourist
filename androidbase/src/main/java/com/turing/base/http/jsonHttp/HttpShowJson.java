@@ -12,7 +12,6 @@ import com.turing.base.R;
 import com.turing.base.adapter.ShowJsonAdapter;
 import com.turing.base.beans.Person;
 import com.turing.base.beans.School;
-import com.turing.base.beans.ShowJsonBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +25,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -46,7 +44,7 @@ public class HttpShowJson extends Thread {
 
 
     private ListView listView;
-    private List<ShowJsonBean> data = new ArrayList<ShowJsonBean>();
+
 
     /**
      * 构造函数
@@ -93,11 +91,16 @@ public class HttpShowJson extends Thread {
             }
             // 将获取的JSON格式的数据 转化为JavaBean
             final List<Person> personList = json2bean(sb.toString());
-            LogUtils.d("size:" +personList.size());
-            // 遍历
-            for(Iterator it2 = personList.iterator();it2.hasNext();){
-                LogUtils.d("遍历list中的元素:" + it2.next());
-            }
+            LogUtils.d("size:" + personList.size());
+
+            // 遍历List 获取图片对应的url
+//            Iterator it = personList.iterator();
+//            while(it.hasNext()){
+//                Person person = (Person)it.next();
+//                String url = person.getUrl();
+//                LogUtils.d("pic url:" + url);
+//            }
+
             // 通过Handler更新主线程的UI
             handler.post(new Runnable() {
                 @Override
@@ -109,7 +112,7 @@ public class HttpShowJson extends Thread {
                     // 查找ListView
                     listView = (ListView) view.findViewById(R.id.id_lv_showJson);
                     // 实例化适配器
-                    ShowJsonAdapter jsonAdapter = new ShowJsonAdapter(context,personList);
+                    ShowJsonAdapter jsonAdapter = new ShowJsonAdapter(context, personList);
                     // 设置适配器
                     listView.setAdapter(jsonAdapter);
 
@@ -131,7 +134,7 @@ public class HttpShowJson extends Thread {
      *
      * @param jsonData
      */
-    private List<Person>  json2bean(String jsonData) {
+    private List<Person> json2bean(String jsonData) {
 
         try {
             JSONObject jsonObject = new JSONObject(jsonData);
@@ -141,7 +144,7 @@ public class HttpShowJson extends Thread {
             if ("" != result && "1".equals(result)) {
                 JSONArray personJsonArray = jsonObject.getJSONArray("personData");
 
-                List<Person> personList = new ArrayList<Person>();
+                List<Person> personList = new ArrayList<>();
                 // 遍历personJsonArray
                 for (int i = 0; i < personJsonArray.length(); i++) {
 
@@ -157,7 +160,7 @@ public class HttpShowJson extends Thread {
                     person.setAge(age);
                     person.setUrl(url);
 
-                    List<School> schoolList = new ArrayList<School>();
+                    List<School> schoolList = new ArrayList<>();
 
                     person.setSchoolList(schoolList);
 
@@ -174,49 +177,48 @@ public class HttpShowJson extends Thread {
                         schoolList.add(school);
                     }
                 }
-                return personList ;
-            }else{
-                // TODO
+                return personList;
+            } else {
+                LogUtils.e("json2Bean 发生了异常,请检查");
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
         LogUtils.d("发生了异常,返回null");
-        return null ;
+        return null;
     }
 }
 /**
- *
  * {
- "result": "1",
- "personData": [
-     {
-     "name": "Jack",
-     "url": "http://f8.topit.me/8/d3/36/110211575441036d38l.jpg",
-     "age": "20",
-     "schoolInfo": [
-         {
-         "name": "清华本科"
-         },
-         {
-         "name": "北大研究生"
-         }
-        ]
-     },
-     {
-     "name": "Tom",
-     "url": "http://pic.pp3.cn/uploads//201407/1402453425452.jpg",
-     "age": "10",
-     "schoolInfo": [
-         {
-         "name": "人大本科"
-         },
-         {
-         "name": "浙大研究生"
-         }
-        ]
-     }
-     ]
- }
+ * "result": "1",
+ * "personData": [
+ * {
+ * "name": "Jack",
+ * "url": "http://f8.topit.me/8/d3/36/110211575441036d38l.jpg",
+ * "age": "20",
+ * "schoolInfo": [
+ * {
+ * "name": "清华本科"
+ * },
+ * {
+ * "name": "北大研究生"
+ * }
+ * ]
+ * },
+ * {
+ * "name": "Tom",
+ * "url": "http://pic.pp3.cn/uploads//201407/1402453425452.jpg",
+ * "age": "10",
+ * "schoolInfo": [
+ * {
+ * "name": "人大本科"
+ * },
+ * {
+ * "name": "浙大研究生"
+ * }
+ * ]
+ * }
+ * ]
+ * }
  **/

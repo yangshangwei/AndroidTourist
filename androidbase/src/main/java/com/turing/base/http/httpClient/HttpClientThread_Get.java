@@ -1,4 +1,4 @@
-package com.turing.base.http;
+package com.turing.base.http.httpClient;
 
 import android.os.Handler;
 import android.widget.EditText;

@@ -19,6 +19,8 @@ import org.androidannotations.annotations.ViewById;
 public class JsonActivity extends Activity {
 
     private static final String url = "http://192.168.1.105:8080/HttpService/MyJsonServlet";
+    // 公司本机IP
+   // private static final String url = "http://172.20.212.198:8080/HttpService/MyJsonServlet";
     private Handler handler = new Handler() ;
 
 

@@ -7,8 +7,8 @@ import android.widget.EditText;
 
 import com.apkfuns.logutils.LogUtils;
 import com.turing.base.R;
-import com.turing.base.http.HttpClientThread_Get;
-import com.turing.base.http.HttpClientThread_Post;
+import com.turing.base.http.httpClient.HttpClientThread_Get;
+import com.turing.base.http.httpClient.HttpClientThread_Post;
 import com.turing.base.http.HttpThreadGetMethod;
 import com.turing.base.http.HttpThreadPostMethod;
 
@@ -53,6 +53,8 @@ public class LoginActivity extends Activity {
 
 
     private String url = "http://192.168.1.105:8080/HttpService/MyServlet";
+    // 公司本机IP
+   // private String url = "http://172.20.212.198:8080/HttpService/MyServlet";
     private Handler handler = new Handler();
 
 
@@ -86,6 +88,7 @@ public class LoginActivity extends Activity {
         }
         new HttpClientThread_Get(url, handler, et_response).start();
         url = "http://192.168.1.105:8080/HttpService/MyServlet" ;
+       // url= "http://172.20.212.198:8080/HttpService/MyServlet";
         LogUtils.d("调用结束，url还原为初始的url");
     }
 
