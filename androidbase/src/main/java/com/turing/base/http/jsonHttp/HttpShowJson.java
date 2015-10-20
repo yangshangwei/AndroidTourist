@@ -93,6 +93,7 @@ public class HttpShowJson extends Thread {
             final List<Person> personList = json2bean(sb.toString());
             LogUtils.d("size:" + personList.size());
 
+
             // 遍历List 获取图片对应的url
 //            Iterator it = personList.iterator();
 //            while(it.hasNext()){
@@ -105,7 +106,7 @@ public class HttpShowJson extends Thread {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-
+                    LogUtils.d("******************************");
                     // 将布局文件转换为视图
                     View view = HttpShowJson.this.inflater.inflate(R.layout.activity_show_original_json, null);
 

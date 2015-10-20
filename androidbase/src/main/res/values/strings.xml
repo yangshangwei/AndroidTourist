@@ -27,4 +27,7 @@
     <string name="showJson">ShowJson</string>
     <string name="clearJson">ClearJson</string>
     <string name="result">结果信息:</string>
+    <string name="getXml">GetXml</string>
+    <string name="showXml">ShowXml</string>
+    <string name="clearXml">ClearXml</string>
 </resources>

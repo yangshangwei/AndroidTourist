@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:id="@+id/id_layout_xmlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/id_btn_getXml"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="@string/getXml" />
+
+        <Button
+            android:id="@+id/id_btn_showXml"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/showXml" />
+
+        <Button
+            android:id="@+id/id_btn_clearXml"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clearXml" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/id_view_v1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/id_layout_xmlHeader"
+        android:background="#66CCFF" />
+
+    <TextView
+        android:id="@+id/id_tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_view_v1"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="@string/result" />
+
+    <View
+        android:id="@+id/id_view_2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/id_tv_result"
+        android:background="#66CCFF" />
+
+    <RelativeLayout
+        android:id="@+id/id_layout_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/id_view_2" />
+
+</RelativeLayout>

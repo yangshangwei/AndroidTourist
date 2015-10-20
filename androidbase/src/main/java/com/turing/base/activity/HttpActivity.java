@@ -85,6 +85,7 @@ public class HttpActivity extends Activity {
                 startActivity(new Intent(this,JsonActivity_.class));
                 break;
             case R.id.id_btn_XmlModule:
+                startActivity(new Intent(this,XmlActivity_.class));
                 break;
             case R.id.id_btn_multiThread:
                 break;
