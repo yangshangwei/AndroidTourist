@@ -49,7 +49,7 @@ public class XmlActivity extends Activity {
                 new HttpThreadGetXml(this,url ,relativeLayout, handler).start();
                 break;
             case R.id.id_btn_showXml:
-                new HttpThreadShowXml().start();
+                new HttpThreadShowXml(this,url,relativeLayout, handler).start();
                 break;
             case R.id.id_btn_clearXml:
                 this.relativeLayout.removeAllViews();

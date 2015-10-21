@@ -30,11 +30,11 @@ public class HttpThreadGetXml extends Thread {
     private String url;
     private RelativeLayout relativeLayout;
     private Handler handler;
-    private LayoutInflater inflater ;
-    private Context context ;
+    private LayoutInflater inflater;
+    private Context context;
 
-    public HttpThreadGetXml(Context context ,String url, RelativeLayout relativeLayout, Handler handler) {
-        this.context = context ;
+    public HttpThreadGetXml(Context context, String url, RelativeLayout relativeLayout, Handler handler) {
+        this.context = context;
         this.url = url;
         this.relativeLayout = relativeLayout;
         this.handler = handler;
@@ -51,12 +51,11 @@ public class HttpThreadGetXml extends Thread {
      * 当然了都是重复代码 ，为了巩固记忆，暂不抽取
      */
     private void doGetXml() {
-
         try {
             // 实例化
             URL httpUrl = new URL(url);
             // 打开连接
-            HttpURLConnection connection = (HttpURLConnection)httpUrl.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) httpUrl.openConnection();
             // 设置连接属性
             connection.setRequestMethod("GET");
             connection.setReadTimeout(5 * 1000);
@@ -66,8 +65,8 @@ public class HttpThreadGetXml extends Thread {
             // 读取输入流
             BufferedReader reader = new BufferedReader(new InputStreamReader(ins));
             final StringBuffer sb = new StringBuffer();
-            String line ;
-            while((line = reader.readLine()) != null){
+            String line;
+            while ((line = reader.readLine()) != null) {
                 sb.append(line);
             }
             LogUtils.d("服务端返回的xml报文:" + sb.toString());
