@@ -4,9 +4,13 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Xml;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ExpandableListView;
 import android.widget.RelativeLayout;
 
 import com.apkfuns.logutils.LogUtils;
+import com.turing.base.R;
+import com.turing.base.adapter.ShowXmlAdapter;
 import com.turing.base.beans.ClassBean;
 import com.turing.base.beans.StudentBean;
 
@@ -36,6 +40,11 @@ public class HttpThreadShowXml extends Thread {
     private Handler handler;
     private LayoutInflater inflater;
     private Context context;
+
+
+    private ExpandableListView listView;
+
+
 
     public HttpThreadShowXml(Context context, String url, RelativeLayout relativeLayout, Handler handler) {
         this.context = context;
@@ -74,14 +83,26 @@ public class HttpThreadShowXml extends Thread {
 //            }
 //            LogUtils.d("服务端返回的xml报文:" + sb.toString());
 **/
-            List<ClassBean>  classBeanList = xml2Bean(ins);
+            final List<ClassBean>  classBeanList = xml2Bean(ins);
             LogUtils.d("个数：" + classBeanList.size());
 
             // 通过Handler更新UI组件
             handler.post(new Runnable() {
                 @Override
                 public void run() {
+                    // 将布局文件转换为视图
+                    View view = HttpThreadShowXml.this.inflater.inflate(R.layout.activity_show_original_xml, null);
 
+                    // 查找ListView
+                    listView = (ExpandableListView) view.findViewById(R.id.id_lv_showXml);
+                    // 实例化适配器
+                    ShowXmlAdapter xmlAdapter = new ShowXmlAdapter(context, classBeanList);
+                    // 设置适配器
+                    listView.setAdapter(xmlAdapter);
+
+                    //清除组件后,增加视图
+                    HttpThreadShowXml.this.relativeLayout.removeAllViews();
+                    HttpThreadShowXml.this.relativeLayout.addView(view);
                 }
             });
 

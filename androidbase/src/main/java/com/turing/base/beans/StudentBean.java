@@ -5,7 +5,6 @@ package com.turing.base.beans;
  *
  * @author Mr.Yang on 2015-10-22  01:04.
  * @version 1.0
- * @desc
  */
 public class StudentBean {
 
