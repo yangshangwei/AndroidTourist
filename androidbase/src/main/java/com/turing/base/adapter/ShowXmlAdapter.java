@@ -18,7 +18,6 @@ import java.util.List;
  *
  * @author Mr.Yang on 2015-10-19  23:31.
  * @version 1.0
- * @desc
  */
 public class ShowXmlAdapter extends BaseExpandableListAdapter {
 
