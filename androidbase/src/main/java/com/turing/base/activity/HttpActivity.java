@@ -91,6 +91,7 @@ public class HttpActivity extends Activity {
                 startActivity(new Intent(this, DownLoadActivity_.class));
                 break;
             case R.id.id_btn_httpUpLoad:
+                startActivity(new Intent(this, Upload_HttpUrlConnection_Activity_.class));
                 break;
             case R.id.id_btn_httpClientUpload:
                 break;

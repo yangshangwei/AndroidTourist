@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
  *          1、首先得到下载文件的长度，然后设置本地文件
  *          的长度。
  *          HttpURLConnection.getContentLength();
- *          RandomAccessFile file = newRandomAccessFile("QQWubiSetup.exe","rwd");
+ *          RandomAccessFile file = new RandomAccessFile("QQWubiSetup.exe","rwd");
  *          file.setLength(filesize);//设置本地文件的长度
  *          2、根据文件长度和线程数计算每条线程下载的数据长度和下载位置。
  *          如：文件的长度为6M，线程数为3，那么，每条线程下载的数据长度为2M，每条线程开始下载的位置如上图所示。

@@ -27,6 +27,7 @@
         <activity android:name=".activity.JsonActivity_"/>
         <activity android:name=".activity.XmlActivity_"/>
         <activity android:name=".activity.DownLoadActivity_"/>
+        <activity android:name=".activity.Upload_HttpUrlConnection_Activity_"/>
     </application>
 
 </manifest>
