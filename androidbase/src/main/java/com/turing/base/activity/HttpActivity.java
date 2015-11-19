@@ -82,12 +82,13 @@ public class HttpActivity extends Activity {
                 startActivity(new Intent(this, LoginActivity_.class));
                 break;
             case R.id.id_btn_JsonModule:
-                startActivity(new Intent(this,JsonActivity_.class));
+                startActivity(new Intent(this, JsonActivity_.class));
                 break;
             case R.id.id_btn_XmlModule:
-                startActivity(new Intent(this,XmlActivity_.class));
+                startActivity(new Intent(this, XmlActivity_.class));
                 break;
             case R.id.id_btn_multiThread:
+                startActivity(new Intent(this, DownLoadActivity_.class));
                 break;
             case R.id.id_btn_httpUpLoad:
                 break;

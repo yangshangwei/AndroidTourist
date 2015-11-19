@@ -38,7 +38,7 @@ public class XmlActivity extends Activity {
     @ViewById(R.id.id_layout_body)
     RelativeLayout relativeLayout ;
 
-    private String url = "http://192.168.1.105:8080/HttpService/skills.xml" ;
+    private String url = "http://192.168.1.101:8080/HttpService/skills.xml" ;
     private Handler handler = new Handler();
 
     @Click({R.id.id_btn_getXml,R.id.id_btn_showXml,R.id.id_btn_clearXml})
