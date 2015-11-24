@@ -1,5 +1,8 @@
 package com.turing.base.http.uploadHttp;
 
+import android.os.Handler;
+import android.os.Message;
+
 import com.apkfuns.logutils.LogUtils;
 
 import java.io.BufferedReader;
@@ -23,6 +26,8 @@ public class UploadThread_HttpURLConnection extends Thread {
 
     private String url;
     private File file;
+    private Handler handler;
+
 
     // 边界标识 随机生成
     private String BOUNDARY = UUID.randomUUID().toString();
@@ -37,11 +42,11 @@ public class UploadThread_HttpURLConnection extends Thread {
      * @param url
      * @param file
      */
-    public UploadThread_HttpURLConnection(String url, File file) {
+    public UploadThread_HttpURLConnection(String url, File file, Handler handler) {
         this.url = url;
         this.file = file;
-        LogUtils.d("url:" + url);
-        LogUtils.d("fileName:" + file.getName());
+        this.handler = handler;
+
     }
 
     @Override
@@ -124,6 +129,11 @@ public class UploadThread_HttpURLConnection extends Thread {
                 ds.close();
             }
 
+            // 发送消息，在主线程更新提示信息
+            Message message = new Message();
+            message.what=1;
+            message.obj=sb.toString();
+            handler.sendMessage(message);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

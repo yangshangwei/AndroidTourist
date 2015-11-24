@@ -12,12 +12,15 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.DocumentsContract;import android.provider.MediaStore;
 
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.turing.base.R;
 import com.turing.base.http.uploadHttp.UploadThread_HttpURLConnection;
@@ -48,6 +51,19 @@ public class Upload_HttpUrlConnection_Activity extends Activity {
     //private String url = "http://192.168.1.105:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
     // 文件或者图片的存放路径
     private String path = null;
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case 1 :
+                    String response = msg.obj.toString();
+                    Toast.makeText(Upload_HttpUrlConnection_Activity.this,response,Toast.LENGTH_LONG).show();
+            }
+        }
+    };
+
+
 
 
     @ViewById(R.id.id_btn_choose_local_pic)
@@ -279,7 +295,7 @@ public class Upload_HttpUrlConnection_Activity extends Activity {
 
         File file = new File(path);
         // 启动子线程
-        new UploadThread_HttpURLConnection(url, file).start();
+        new UploadThread_HttpURLConnection(url, file,handler).start();
 
     }
 
