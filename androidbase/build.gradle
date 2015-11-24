@@ -4,6 +4,14 @@ def AAVersion = '3.3.2'
 
 android {
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
     useLibrary 'org.apache.http.legacy'
 
     compileSdkVersion 23
@@ -34,11 +42,18 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.apkfuns.logutils:library:1.0.6'
     compile 'com.android.support:design:23.0.1'
+
+    // 使用HttpClient传递文件需要添加的依赖
+    compile 'org.apache.httpcomponents:httpcore:4.3.3'
+    compile 'org.apache.httpcomponents:httpmime:4.3.6'
 }
 
 apt {
+
     arguments {
         androidManifestFile variant.outputs[0].processResources.manifestFile
         resourcePackageName 'com.turing.base' // 工程包名
     }
+
+
 }

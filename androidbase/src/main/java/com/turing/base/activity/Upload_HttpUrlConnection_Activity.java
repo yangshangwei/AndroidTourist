@@ -14,8 +14,8 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.DocumentsContract;import android.provider.MediaStore;
-
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.turing.base.R;
+import com.turing.base.http.uploadHttp.UploadThread_HttpClient;
 import com.turing.base.http.uploadHttp.UploadThread_HttpURLConnection;
 
 import org.androidannotations.annotations.Click;
@@ -44,21 +45,32 @@ import java.io.FileNotFoundException;
 
 @EActivity(R.layout.activity_upload)
 @Fullscreen
-public class Upload_HttpUrlConnection_Activity extends Activity {
+public  class Upload_HttpUrlConnection_Activity extends Activity {
 
 
-    private String url = "http://172.20.212.198:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
-    //private String url = "http://192.168.1.105:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
+    //private String url = "http://172.20.212.198:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
+    private String url = "http://192.168.1.105:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
     // 文件或者图片的存放路径
     private String path = null;
 
+    // 使用Handler更新提示信息
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
+            String response = null;
             switch (msg.what){
                 case 1 :
-                    String response = msg.obj.toString();
-                    Toast.makeText(Upload_HttpUrlConnection_Activity.this,response,Toast.LENGTH_LONG).show();
+                    response = msg.obj.toString();
+                    Toast.makeText(Upload_HttpUrlConnection_Activity.this,"httpURLConnection  " +response,Toast.LENGTH_LONG).show();
+                    Upload_HttpUrlConnection_Activity.this.finish();
+                    break;
+                case 2:
+                    response = msg.obj.toString();
+                    Toast.makeText(Upload_HttpUrlConnection_Activity.this,"httpClient " + response,Toast.LENGTH_LONG).show();
+                    Upload_HttpUrlConnection_Activity.this.finish();
+                    break;
+                default:
+                    break;
             }
         }
     };
@@ -70,24 +82,30 @@ public class Upload_HttpUrlConnection_Activity extends Activity {
     Button btn_choose_pic;
     @ViewById(R.id.id_btn_submit_local_pic)
     Button btn_submit_pic;
+    @ViewById(R.id.id_btn_submit2_local_pic)
+    Button btn_submit_httpClient ;
 
     @ViewById(R.id.id_iv_show_local_pic)
     ImageView iv_local_pic;
 
 
-    @Click({R.id.id_btn_choose_local_pic, R.id.id_btn_submit_local_pic})
+    @Click({R.id.id_btn_choose_local_pic, R.id.id_btn_submit_local_pic,R.id.id_btn_submit2_local_pic})
     public void chooseLocalPic(View view) {
         switch (view.getId()) {
             case R.id.id_btn_choose_local_pic:
                 chooseSinglePicFromPhone();
                 break;
             case R.id.id_btn_submit_local_pic:
-                upload2Server();
+                httpURLConnectionUpload2Server();
                 break;
+            case R.id.id_btn_submit2_local_pic:
+                httpClientUplaod();
             default:
                 break;
         }
     }
+
+    
 
 
     /**
@@ -289,13 +307,22 @@ public class Upload_HttpUrlConnection_Activity extends Activity {
 
 
     /**
-     * 将图片上传到服务端
+     * 通过HttpURLConnection的方式将图片上传到服务端
      */
-    private void upload2Server() {
+    private void httpURLConnectionUpload2Server() {
 
         File file = new File(path);
         // 启动子线程
         new UploadThread_HttpURLConnection(url, file,handler).start();
+
+    }
+    /**
+     * 通过HttpURLConnection的方式将图片上传到服务端
+     */
+    private void httpClientUplaod() {
+        File file = new File(path);
+        // 启动子线程
+        new UploadThread_HttpClient(url, file, handler).start();
 
     }
 

@@ -19,8 +19,7 @@
     <string name="hc_post">HttpClient-Post请求</string>
     <string name="json">JSON解析</string>
     <string name="xml">XML解析</string>
-    <string name="httpUpLoad">Http方式上传图片</string>
-    <string name="httpClientUpload">HttpClient上传图片</string>
+
     <string name="mulitDownLoad">多线程下载图片</string>
     <string name="title_activity_json">JsonActivity</string>
     <string name="getJson">Get-Json</string>
@@ -33,5 +32,6 @@
     <string name="tip">提示信息</string>
     <string name="downFile">多线程下载文件/图片</string>
     <string name="extra_local_pic">选择本地图片</string>
-    <string name="uploadPic">上传本地图片</string>
+
+    <string name="upload">上传(HttpURLConnection/HttpClient)</string>
 </resources>

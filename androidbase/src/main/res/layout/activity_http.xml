@@ -68,12 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        android:text="@string/httpUpLoad" />
+        android:text="@string/upload" />
 
-    <Button
-        android:id="@+id/id_btn_httpClientUpload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="@string/httpClientUpload" />
+
 </LinearLayout>

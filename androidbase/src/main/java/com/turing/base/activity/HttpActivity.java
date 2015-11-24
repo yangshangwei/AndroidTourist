@@ -50,8 +50,6 @@ public class HttpActivity extends Activity {
     @ViewById(R.id.id_btn_httpUpLoad)
     Button btn_httpUpload;
 
-    @ViewById(R.id.id_btn_httpClientUpload)
-    Button btn_hcUpload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +59,7 @@ public class HttpActivity extends Activity {
     @Click({R.id.id_btn_loadWeb, R.id.id_btn_loadPic,
             R.id.id_btn_httpUrlConnectionOper, R.id.id_btn_HttpClientOper,
             R.id.id_btn_JsonModule, R.id.id_btn_XmlModule,
-            R.id.id_btn_multiThread, R.id.id_btn_httpUpLoad, R.id.id_btn_httpClientUpload})
+            R.id.id_btn_multiThread, R.id.id_btn_httpUpLoad})
     public void loadByURL(View clickedView) {
         switch (clickedView.getId()) {
             case R.id.id_btn_loadWeb:
@@ -92,8 +90,6 @@ public class HttpActivity extends Activity {
                 break;
             case R.id.id_btn_httpUpLoad:
                 startActivity(new Intent(this, Upload_HttpUrlConnection_Activity_.class));
-                break;
-            case R.id.id_btn_httpClientUpload:
                 break;
             default:
                 break;

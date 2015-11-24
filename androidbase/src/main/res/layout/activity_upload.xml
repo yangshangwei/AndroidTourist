@@ -11,17 +11,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/extra_local_pic" />
-    
+
     <ImageView
         android:id="@+id/id_iv_show_local_pic"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-    
-    <Button
-        android:id="@+id/id_btn_submit_local_pic"
+        android:layout_weight="1" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/uploadPic" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_submit_local_pic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HttpURLConnection上传" />
+
+        <Button
+            android:id="@+id/id_btn_submit2_local_pic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HttpClient方式上传" />
+
+
+    </LinearLayout>
 </LinearLayout>
