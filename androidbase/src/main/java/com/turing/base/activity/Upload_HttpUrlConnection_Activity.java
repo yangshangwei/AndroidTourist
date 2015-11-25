@@ -48,8 +48,8 @@ import java.io.FileNotFoundException;
 public  class Upload_HttpUrlConnection_Activity extends Activity {
 
 
-    //private String url = "http://172.20.212.198:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
-    private String url = "http://192.168.1.105:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
+    private String url = "http://172.20.212.198:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
+    //private String url = "http://192.168.1.105:8080/UpLoadService_Servlet3Tomcat7/UpLoad";
     // 文件或者图片的存放路径
     private String path = null;
 
@@ -159,6 +159,7 @@ public  class Upload_HttpUrlConnection_Activity extends Activity {
 
 
     /**
+     * API19以下获取图片路径的方法
      * @param uri
      */
     private String getFilePath_below19(Uri uri) {
