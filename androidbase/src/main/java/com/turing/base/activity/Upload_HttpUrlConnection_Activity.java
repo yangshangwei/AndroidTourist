@@ -59,11 +59,13 @@ public  class Upload_HttpUrlConnection_Activity extends Activity {
         public void handleMessage(Message msg) {
             String response = null;
             switch (msg.what){
+                // HttpURLConnection
                 case 1 :
                     response = msg.obj.toString();
                     Toast.makeText(Upload_HttpUrlConnection_Activity.this,"httpURLConnection  " +response,Toast.LENGTH_LONG).show();
                     Upload_HttpUrlConnection_Activity.this.finish();
                     break;
+                // HttpClient
                 case 2:
                     response = msg.obj.toString();
                     Toast.makeText(Upload_HttpUrlConnection_Activity.this,"httpClient " + response,Toast.LENGTH_LONG).show();
@@ -310,19 +312,27 @@ public  class Upload_HttpUrlConnection_Activity extends Activity {
      * 通过HttpURLConnection的方式将图片上传到服务端
      */
     private void httpURLConnectionUpload2Server() {
+        if(path !=null){
+            File file = new File(path);
+            // 启动子线程
+            new UploadThread_HttpURLConnection(url, file,handler).start();
+        } else{
+            Toast.makeText(Upload_HttpUrlConnection_Activity.this, "请选择图片",Toast.LENGTH_LONG).show();
+        }
 
-        File file = new File(path);
-        // 启动子线程
-        new UploadThread_HttpURLConnection(url, file,handler).start();
 
     }
     /**
      * 通过HttpURLConnection的方式将图片上传到服务端
      */
     private void httpClientUplaod() {
-        File file = new File(path);
-        // 启动子线程
-        new UploadThread_HttpClient(url, file, handler).start();
+        if(path !=null){
+            File file = new File(path);
+            // 启动子线程
+            new UploadThread_HttpClient(url, file, handler).start();
+        } else{
+            Toast.makeText(Upload_HttpUrlConnection_Activity.this, "请选择图片",Toast.LENGTH_LONG).show();
+        }
 
     }
 

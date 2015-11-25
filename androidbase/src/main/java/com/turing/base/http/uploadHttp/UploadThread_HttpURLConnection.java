@@ -131,8 +131,8 @@ public class UploadThread_HttpURLConnection extends Thread {
 
             // 发送消息，在主线程更新提示信息
             Message message = new Message();
-            message.what=1;
-            message.obj=sb.toString();
+            message.what = 1;
+            message.obj = sb.toString();
             handler.sendMessage(message);
 
         } catch (MalformedURLException e) {
@@ -142,4 +142,6 @@ public class UploadThread_HttpURLConnection extends Thread {
         }
 
     }
+
+
 }
