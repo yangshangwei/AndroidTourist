@@ -26,9 +26,9 @@ public class MainMenuListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflate;
 
-    public MainMenuListAdapter(Context context, List<MainMenuListItemBean> dataList) {
+    public MainMenuListAdapter(Context context, List<? extends Object> dataList) {
         this.mContext = context;
-        this.mDataList = dataList;
+        this.mDataList = (List<MainMenuListItemBean>) dataList;
         this.mInflate = LayoutInflater.from(context);
     }
 

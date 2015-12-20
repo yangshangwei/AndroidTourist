@@ -42,6 +42,7 @@ public class DownLoad {
     // 创建线程池，指定大小
     private Executor threadPool = Executors.newFixedThreadPool(3);
 
+
     public void downLoadFile(String url, Handler handler) {
         try {
             // 根据URL实例化URL

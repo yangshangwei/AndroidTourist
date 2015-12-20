@@ -34,7 +34,8 @@ public class HttpClientThread_Get extends Thread {
     }
 
     @Override
-    public void run() {
+    public void run(){
+
         doHttpClientGet();
     }
 

@@ -5,17 +5,15 @@ import android.content.Intent;
 import android.widget.ListView;
 
 import com.turing.base.activity.HttpActivity_;
+import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.adapter.MainMenuListAdapter;
-import com.turing.base.beans.MainMenuListItemBean;
+import com.turing.base.utils.ListViewDataFactory;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Fullscreen;
 import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.ViewById;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 入口类
@@ -36,15 +34,18 @@ public class MainActivity extends Activity {
     // 查找并初始化ListView组件
     @ViewById(R.id.id_lv_menu_list)
     ListView listView;
-    // 数据来源
-    List<MainMenuListItemBean> dataList;
+
+
+    // ListView中显示的内容
+    public static String[] datas = new String[]{
+                        "HTTP通信",
+                        "ListView使用技巧"};
 
     @AfterViews
     public void showMenuList() {
-        // 模拟数据来源
-        simulateData();
+
         // 实例化适配器
-        MainMenuListAdapter adapter = new MainMenuListAdapter(this, dataList);
+        MainMenuListAdapter adapter = new MainMenuListAdapter(this, ListViewDataFactory.simulateData(datas));
 
         listView.setAdapter(adapter);
     }
@@ -55,39 +56,16 @@ public class MainActivity extends Activity {
             case 0:
                 startActivity(new Intent(MainActivity.this,HttpActivity_.class));
                 break;
+            case 1:
+                startActivity(new Intent(MainActivity.this,ListViewFunctionsActivity_.class));
+                break;
             default:
                 break;
         }
     }
 
 
-    /**
-     * 模拟数据源
-     */
-    public void simulateData() {
 
-        MainMenuListItemBean bean = new MainMenuListItemBean();
-        bean.setContent("HTTP通信");
-        MainMenuListItemBean bean1 = new MainMenuListItemBean();
-        bean1.setContent("待补充1");
-        MainMenuListItemBean bean2 = new MainMenuListItemBean();
-        bean2.setContent("待补充2");
-        MainMenuListItemBean bean3 = new MainMenuListItemBean();
-        bean3.setContent("待补充3");
-        MainMenuListItemBean bean4 = new MainMenuListItemBean();
-        bean4.setContent("待补充4");
-        MainMenuListItemBean bean5 = new MainMenuListItemBean();
-        bean5.setContent("待补充5");
-        MainMenuListItemBean bean6 = new MainMenuListItemBean();
-        bean6.setContent("待补充6");
 
-        dataList = new ArrayList<>();
-        dataList.add(bean);
-        dataList.add(bean1);
-        dataList.add(bean2);
-        dataList.add(bean3);
-        dataList.add(bean4);
-        dataList.add(bean5);
-        dataList.add(bean6);
-    }
+
 }
