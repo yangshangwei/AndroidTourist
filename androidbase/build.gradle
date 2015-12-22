@@ -46,6 +46,8 @@ dependencies {
     // 使用HttpClient传递文件需要添加的依赖
     compile 'org.apache.httpcomponents:httpcore:4.3.3'
     compile 'org.apache.httpcomponents:httpmime:4.3.6'
+
+    compile files('libs/commoms-lang.jar')
 }
 
 apt {
