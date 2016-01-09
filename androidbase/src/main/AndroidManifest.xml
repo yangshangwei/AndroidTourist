@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.turing.base" >
+    package="com.turing.base">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
     <application
         android:name=".AppContext"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,11 +25,54 @@
         <activity android:name=".activity.LoadWebActivity_" />
         <activity android:name=".activity.LoadPicActivity_" />
         <activity android:name=".activity.LoginActivity_" />
-        <activity android:name=".activity.JsonActivity_"/>
-        <activity android:name=".activity.XmlActivity_"/>
-        <activity android:name=".activity.DownLoadActivity_"/>
-        <activity android:name=".activity.Upload_HttpUrlConnection_Activity_"/>
-        <activity android:name=".activity.ListViewFunctionsActivity_"/>
+        <activity android:name=".activity.JsonActivity_" />
+        <activity android:name=".activity.XmlActivity_" />
+        <activity android:name=".activity.DownLoadActivity_" />
+        <activity android:name=".activity.Upload_HttpUrlConnection_Activity_" />
+        <activity android:name=".activity.ListViewFunctionsActivity_" />
+        <activity android:name=".activity.UI_Base_" />
+
+        <!-- 该Activity未设置任何intent-filter,用显式的方式调用这个Activity -->
+        <activity
+            android:name=".activity.intentAct.XianSiDiaoyongAct"
+            android:label="XianSiDiaoyongAct" />
+        <!-- 隐式调用Activity -->
+        <activity
+            android:name=".activity.intentAct.YinSiDiaoyngAct"
+            android:icon="@drawable/flag_mark_red"
+            android:label="YinSiDiaoyngAct">
+            <intent-filter>
+                <action android:name="myAction1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- 这个intent-filter和YinSiSelectAct的intent的相同 -->
+            <intent-filter>
+                <action android:name="myAction2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="mycategory" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.intentAct.YinSiSelectAct"
+            android:icon="@drawable/flag_mark_yellow"
+            android:label="YinSiSelectAct">
+
+            <!-- 这个intent-filter和YinSiDiaoyngAct的第二个intent-filter相同，使用这个intent-filter，屏幕会弹出一个列表，供用户选择 -->
+            <intent-filter>
+                <action android:name="myAction2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="mycategory" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".activity.lifeCircle.LifeCircleActivity"
+            android:label="@string/title_activity_life_circle" />
+        <activity android:name=".activity.intentAct.GetIntentActivity"></activity>
     </application>
 
 </manifest>

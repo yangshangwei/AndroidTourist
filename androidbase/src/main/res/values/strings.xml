@@ -34,4 +34,5 @@
     <string name="extra_local_pic">选择本地图片</string>
 
     <string name="upload">上传(HttpURLConnection/HttpClient)</string>
+    <string name="title_activity_life_circle">LifeCircleActivity</string>
 </resources>

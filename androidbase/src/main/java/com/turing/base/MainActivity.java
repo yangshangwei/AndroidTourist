@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import com.turing.base.activity.HttpActivity_;
 import com.turing.base.activity.ListViewFunctionsActivity_;
+import com.turing.base.activity.UI_Base_;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.utils.ListViewDataFactory;
 
@@ -39,7 +40,9 @@ public class MainActivity extends Activity {
     // ListView中显示的内容
     public static String[] datas = new String[]{
                         "HTTP通信",
-                        "ListView使用技巧"};
+                        "ListView使用技巧",
+                        "Android控件架构与自定义控件",
+                        "我的UI我做主"};
 
     @AfterViews
     public void showMenuList() {
@@ -58,6 +61,12 @@ public class MainActivity extends Activity {
                 break;
             case 1:
                 startActivity(new Intent(MainActivity.this,ListViewFunctionsActivity_.class));
+                break;
+            case 2:
+                // TODO
+                break;
+            case 3:
+                startActivity(new Intent(MainActivity.this,UI_Base_.class));
                 break;
             default:
                 break;

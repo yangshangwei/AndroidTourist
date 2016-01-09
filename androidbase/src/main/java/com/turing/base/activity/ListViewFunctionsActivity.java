@@ -66,6 +66,51 @@ public class ListViewFunctionsActivity extends Activity {
         adapter = new MainMenuListAdapter(this, dataList);
         // 设置adapter
         listView.setAdapter(adapter);
+
+
+        // 监听事件
+        listView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        LogUtils.d("ACTION_DOWN");
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        LogUtils.d("ACTION_MOVE");
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        LogUtils.d("ACTION_UP");
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                switch (scrollState){
+                    case SCROLL_STATE_IDLE:
+                        LogUtils.d("滚动停止SCROLL_STATE_IDLE");
+                        break;
+                    case SCROLL_STATE_FLING:
+                        LogUtils.d("手指抛动时SCROLL_STATE_FLING");
+                        break;
+                    case SCROLL_STATE_TOUCH_SCROLL:
+                        LogUtils.d("正在滚动时SCROLL_STATE_TOUCH_SCROLL");
+                        break;
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                LogUtils.d("onScroll");
+            }
+        });
     }
 
     /**
@@ -139,39 +184,8 @@ public class ListViewFunctionsActivity extends Activity {
                 // 设置空的时候的提示
                 listView.setEmptyView(findViewById(R.id.id_iv_empty_listView));
                 break;
-            case 8:// ListView的滑动监听
+            case 8:// ListView的滑动监听  TODO
                 LogUtils.d(position);
-                listView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        switch(event.getAction()){
-                            case MotionEvent.ACTION_DOWN:
-                                LogUtils.d("down....");
-                                break;
-                            case MotionEvent.ACTION_MOVE:
-                                LogUtils.d("move....");
-                                break;
-                            case MotionEvent.ACTION_UP:
-                                LogUtils.d("up....");
-                                break;
-                            default :
-                                break;
-                        }
-                        return false;
-                    }
-                });
-
-                listView.setOnScrollListener(new AbsListView.OnScrollListener() {
-                    @Override
-                    public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-                    }
-
-                    @Override
-                    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-                    }
-                });
                 break;
             case 9:// 具有弹性的ListView
                 LogUtils.d(position);
@@ -190,6 +204,9 @@ public class ListViewFunctionsActivity extends Activity {
                 break;
         }
     }
+
+
+
 
     /**
      * 提示信息
