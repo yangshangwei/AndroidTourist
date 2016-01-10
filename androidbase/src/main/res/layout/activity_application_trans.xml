@@ -7,19 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.intentAct.GetIntentActivity">
+    tools:context="com.turing.base.activity.intentAct.ApplicationTransActivity">
 
 
     <TextView
-        android:id="@+id/id_tv_getIntent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="intent传值"/>
-
-    <TextView
-        android:id="@+id/id_tv_getStatic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="静态变量传值"/>
+        android:id="@+id/id_tv_app_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

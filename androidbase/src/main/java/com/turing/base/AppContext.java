@@ -3,6 +3,7 @@ package com.turing.base;
 import android.app.Application;
 
 import com.apkfuns.logutils.LogUtils;
+import com.turing.base.activity.intentAct.Data;
 
 /**
  * MyApp
@@ -12,6 +13,12 @@ import com.apkfuns.logutils.LogUtils;
  * @desc
  */
 public class AppContext extends Application {
+
+    /**
+     * 演示使用全局变量传递数据 appName  data
+     */
+    public String appName;
+    public Data data = new Data();
 
     @Override
     public void onCreate() {

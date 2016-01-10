@@ -67,12 +67,14 @@
                 <category android:name="mycategory" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".activity.lifeCircle.LifeCircleActivity"
             android:label="@string/title_activity_life_circle" />
-        <activity android:name=".activity.intentAct.GetIntentActivity"></activity>
+        <activity android:name=".activity.intentAct.GetIntentActivity" />
+        <activity android:name=".activity.intentAct.StaticTransmitActivity" />
+        <activity android:name=".activity.intentAct.ClipBoardTransStringActivity" />
+        <activity android:name=".activity.intentAct.ClipboardTransObjectDataAct" />
+        <activity android:name=".activity.intentAct.ApplicationTransActivity"></activity>
     </application>
 
 </manifest>
