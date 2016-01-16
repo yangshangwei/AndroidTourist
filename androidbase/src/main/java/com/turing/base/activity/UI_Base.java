@@ -20,9 +20,11 @@ import com.turing.base.activity.intentAct.ClipBoardTransStringActivity;
 import com.turing.base.activity.intentAct.ClipboardTransObjectDataAct;
 import com.turing.base.activity.intentAct.Data;
 import com.turing.base.activity.intentAct.GetIntentActivity;
+import com.turing.base.activity.intentAct.StarActivityForResultAct;
 import com.turing.base.activity.intentAct.StaticTransmitActivity;
 import com.turing.base.activity.intentAct.XianSiDiaoyongAct;
 import com.turing.base.activity.lifeCircle.LifeCircleActivity;
+import com.turing.base.activity.textViewAct.TextViewDemoAct;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.beans.MainMenuListItemBean;
 import com.turing.base.utils.ListViewDataFactory;
@@ -56,7 +58,10 @@ public class UI_Base extends Activity {
             "使用静态（static）传递数据",
             "使用剪切板（Clipboard）传递String类型数据",
             "通过Clipboard传递复杂对象（通过Base64编码）",
-            "通过全局变量传递数据"
+            "通过全局变量传递数据",
+            "返回数据到前一个Activity",
+            "在代码中控制视图",
+            "TextView相关操作"
            };
 
 
@@ -64,7 +69,7 @@ public class UI_Base extends Activity {
     public void showAc(){
         // 模拟数据来源
         dataList = (List<MainMenuListItemBean>) ListViewDataFactory.simulateData(datas);
-        LogUtils.d("数据初始化完毕");
+        LogUtils.d("UIBase数据初始化完毕");
         // 实例化Adapter
         adapter = new MainMenuListAdapter(this, dataList);
         // 设置adapter
@@ -164,7 +169,7 @@ public class UI_Base extends Activity {
 
                         startActivity(intent8);
                         break;
-                    case 8:
+                    case 8:// 通过全局变量来传递数据
 
                         AppContext context = (AppContext)getApplication();
                         context.appName = "ANDROID BASE";
@@ -174,6 +179,18 @@ public class UI_Base extends Activity {
                         Intent intent9 = new Intent(UI_Base.this, ApplicationTransActivity.class);
                         startActivity(intent9);
                         break;
+                    case 9: // 返回数据到前一个Activity
+                        Intent intent10 = new Intent(UI_Base.this, StarActivityForResultAct.class);
+                        startActivityForResult(intent10, 1); // 请求码1  一定要>=0
+                        break;
+                    case 10:// 在代码中操作视图
+
+                        break;
+                    case 11:// TextView
+                        Intent textViewIntent = new Intent();
+                        textViewIntent.setClass(UI_Base.this,TextViewDemoAct.class);
+                        startActivity(textViewIntent);
+                        break;
                     default:
                         break;
                 }
@@ -181,4 +198,23 @@ public class UI_Base extends Activity {
         });
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){  // 请求码1
+            case 1:
+                switch (resultCode){ // 响应码
+                    case 2:
+                        Toast.makeText(UI_Base.this,data.getStringExtra("value"),Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000">
+
+
+    <!--使用android:lineSpacingExtra属性设置行间距-->
+    <TextView
+        android:id="@+id/id_tv_lineSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:lineSpacingExtra="20dp"
+        android:textColor="#000"
+        android:text="第一行的文本\n第二行的文本（20dp）"/>
+
+
+    <!--使用android:lineSpacingMultipile属性设置行间距-->
+    <TextView
+        android:id="@+id/id_tv_lineSpace2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:lineSpacingMultiplier="1.8"
+        android:textColor="#000"
+        android:text="第一行的文本\n第二行的文本(行间距是默认行间距的1.8倍)"/>
+
+
+    <!--使用style定义行间距-->
+    <TextView
+        android:id="@+id/id_tv_lineSpace3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        style="@style/line_space"
+        android:textColor="#000"
+        android:text="第一行的文本\n第二行的文本(style设置的，行间距是默认行间距的1.5倍)"/>
+
+
+    <!--使用代码设置-->
+
+    <TextView
+        android:id="@+id/id_tv_lineSpace4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:textColor="#000"
+        android:text="第一行的文本\n第二行的文本(代码设置)"/>
+
+</LinearLayout>

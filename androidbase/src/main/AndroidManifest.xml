@@ -74,7 +74,19 @@
         <activity android:name=".activity.intentAct.StaticTransmitActivity" />
         <activity android:name=".activity.intentAct.ClipBoardTransStringActivity" />
         <activity android:name=".activity.intentAct.ClipboardTransObjectDataAct" />
-        <activity android:name=".activity.intentAct.ApplicationTransActivity"></activity>
+        <activity android:name=".activity.intentAct.ApplicationTransActivity" />
+        <activity android:name=".activity.intentAct.StarActivityForResultAct" />
+        <activity android:name=".activity.textViewAct.TextViewDemoAct" />
+        <activity android:name=".activity.textViewAct.RichTextViewAct" />
+        <activity android:name=".activity.textViewAct.MultTextPicAct" />
+        <activity android:name=".activity.textViewAct.Jump2Activity" />
+        <activity android:name=".activity.textViewAct.JumpTerminalAct" />
+        <activity android:name=".activity.textViewAct.AddBackgroundAct" />
+        <activity android:name=".activity.textViewAct.BorderTextViewAct" />
+        <activity android:name=".activity.textViewAct.LineSpaceTextViewAct" />
+        <activity android:name=".activity.textViewAct.IgnoreTextAct" />
+        <activity android:name=".activity.textViewAct.LampTextViewAct" />
+        <activity android:name=".activity.textViewAct.ScrollTextViewAct"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/id_tv_ignore1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:ellipsize="start"
+        android:maxLines="2"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:text="维基百科的目标是建立拥有人类全部知识的百科全书" />
+
+    <TextView
+        android:id="@+id/id_tv_ignore2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:ellipsize="middle"
+        android:maxLines="2"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:text="维基百科的目标是建立拥有人类全部知识的百科全书dddddddddddddddddddddd" />
+
+    <TextView
+        android:id="@+id/id_tv_ignore3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:text="维基百科的目标是建立拥有人类全部知识的百科全书ddddddddddddddddddd" />
+
+
+</LinearLayout>

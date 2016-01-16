@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+    
+    
+    <TextView
+        android:id="@+id/id_tv_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:singleLine="false"
+        android:maxLines="4"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarFadeDuration="2000"
+        android:padding="10dp"
+        android:text="周杰伦， 生于中华民国台北县林口乡，是台湾著名国语流行音乐男歌手、演员、导演及音乐创作人。 周杰伦于2000年正式出道并发行其个人首张同名国语专辑《Jay》，翌年凭借该张专辑获得第十二届台湾金曲奖“最佳流行音乐演唱专辑奖”ddddddddddddddddddddddddddddddddddddddddddddddd。"/>
+
+</RelativeLayout>
