@@ -1,8 +1,8 @@
 package com.turing.base.activity.textViewAct;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.turing.base.R;
 
-public class AddBackgroundAct extends AppCompatActivity {
+public class AddBackgroundAct extends Activity {
 
     private TextView tv_addbBackground;
 
@@ -39,10 +39,11 @@ public class AddBackgroundAct extends AppCompatActivity {
 
         // <蓝色背景,红色文字> (每个 “\n”算一个长度)
         start = 14;
+        end = text.length();
         // 创建ColorSpan
         ColorSpan colorSpan = new ColorSpan(Color.RED, Color.BLUE);
         // 将文字转换为ColorSpan对象
-        spannableString.setSpan(colorSpan, start, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(colorSpan, start,end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         tv_addbBackground.setText(spannableString);
 
@@ -66,7 +67,7 @@ public class AddBackgroundAct extends AppCompatActivity {
             this.mTextColor = mTextColor;
             this.mBackgroundColor = mBackgroundColor;
         }
-
+        // 重写updateDrawState方法
         @Override
         public void updateDrawState(TextPaint tp) {
             tp.bgColor = mBackgroundColor;
