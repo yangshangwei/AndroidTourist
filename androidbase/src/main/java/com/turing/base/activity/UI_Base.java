@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.apkfuns.logutils.LogUtils;
 import com.turing.base.AppContext;
 import com.turing.base.R;
+import com.turing.base.activity.buttonAct.ButtonDemoAct;
+import com.turing.base.activity.editTextAct.EditTextDemoAct;
 import com.turing.base.activity.intentAct.ApplicationTransActivity;
 import com.turing.base.activity.intentAct.ClipBoardTransStringActivity;
 import com.turing.base.activity.intentAct.ClipboardTransObjectDataAct;
@@ -61,7 +63,15 @@ public class UI_Base extends Activity {
             "通过全局变量传递数据",
             "返回数据到前一个Activity",
             "在代码中控制视图",
-            "TextView相关操作"
+            "TextView",
+            "EditText",
+            "按钮和复选框控件",
+            "ImageView",
+            "时间和日期控件",
+            "进度条控件",
+            "列表控件",
+            "滚动控件",
+            "ImageSwitcher","GridView","TabHost","ViewStub"
            };
 
 
@@ -165,8 +175,6 @@ public class UI_Base extends Activity {
                         }
                         // 向剪切板写入Base64格式的字符串
                         cbm.setText(base64Str);
-
-
                         startActivity(intent8);
                         break;
                     case 8:// 通过全局变量来传递数据
@@ -184,13 +192,19 @@ public class UI_Base extends Activity {
                         startActivityForResult(intent10, 1); // 请求码1  一定要>=0
                         break;
                     case 10:// 在代码中操作视图
-
                         break;
                     case 11:// TextView
                         Intent textViewIntent = new Intent();
                         textViewIntent.setClass(UI_Base.this,TextViewDemoAct.class);
                         startActivity(textViewIntent);
                         break;
+                    case 12:// EditText
+                        startActivity(new Intent(UI_Base.this,EditTextDemoAct.class));
+                        break;
+                    case 13://按钮和复选框控件
+                        startActivity(new Intent(UI_Base.this, ButtonDemoAct.class));
+                        break;
+                        // TODO
                     default:
                         break;
                 }

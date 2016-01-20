@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:text="使用android:digits属性(输入数字)" />
+
+    <EditText
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/bg_white"
+        android:text="使用adnroid:digits属性输入26个英文小写字母"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/bg_white"
+        android:digits="abcdefghijklmnopqrstuvwxyz"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:text="使用android:inputType属性(输入数字)" />
+
+    <EditText
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:text="使用android:inputType属性(输入Email)" />
+
+    <EditText
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
+
+</LinearLayout>
+
+<!--
+android 1.5以后添加了软件虚拟键盘的功能，所以在输入提示中将会有对应的软键盘模式
+android中inputType属性在EditText输入值时启动的虚拟键盘的风格有着重要的作用。这也大大的方便的操作。有时需要虚拟键盘只为字符或只为数字。所以inputType尤为重要。
+<EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="phone" />
+//文本类型，多为大写、小写和数字符号。
+android:inputType="none"
+android:inputType="text"
+android:inputType="textCapCharacters" 字母大写
+android:inputType="textCapWords" 首字母大写
+android:inputType="textCapSentences" 仅第一个字母大写
+android:inputType="textAutoCorrect" 自动完成
+android:inputType="textAutoComplete" 自动完成
+android:inputType="textMultiLine" 多行输入
+android:inputType="textImeMultiLine" 输入法多行（如果支持）
+android:inputType="textNoSuggestions" 不提示
+android:inputType="textUri" 网址
+android:inputType="textEmailAddress" 电子邮件地址
+android:inputType="textEmailSubject" 邮件主题
+android:inputType="textShortMessage" 短讯
+android:inputType="textLongMessage" 长信息
+android:inputType="textPersonName" 人名
+android:inputType="textPostalAddress" 地址
+android:inputType="textPassword" 密码
+android:inputType="textVisiblePassword" 可见密码
+android:inputType="textWebEditText" 作为网页表单的文本
+android:inputType="textFilter" 文本筛选过滤
+android:inputType="textPhonetic" 拼音输入
+//数值类型
+android:inputType="number" 数字
+android:inputType="numberSigned" 带符号数字格式
+android:inputType="numberDecimal" 带小数点的浮点格式
+android:inputType="phone" 拨号键盘
+android:inputType="datetime" 时间日期
+android:inputType="date" 日期键盘
+android:inputType="time" 时间键盘
+android:hint="" 是editText的一个提示 如：editText显示提示：请输入帐号！ 当点击editText时这个文字会消失。
+
+-->

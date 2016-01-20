@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <EditText
+        android:id="@+id/id_et_inputMess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:minLines="4"
+        android:gravity="left|top"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/id_btn_insertPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_et_inputMess"
+        android:layout_margin="10dp"
+        android:background="#FFF"
+        android:padding="10dp"
+        android:onClick="insertPic"
+        android:text="随机插入表情" />
+
+</RelativeLayout>

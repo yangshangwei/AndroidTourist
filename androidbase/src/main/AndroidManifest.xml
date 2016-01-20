@@ -21,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".activity.HttpActivity_" />
         <activity android:name=".activity.LoadWebActivity_" />
         <activity android:name=".activity.LoadPicActivity_" />
@@ -86,7 +88,14 @@
         <activity android:name=".activity.textViewAct.LineSpaceTextViewAct" />
         <activity android:name=".activity.textViewAct.IgnoreTextAct" />
         <activity android:name=".activity.textViewAct.LampTextViewAct" />
-        <activity android:name=".activity.textViewAct.ScrollTextViewAct"></activity>
+        <activity android:name=".activity.textViewAct.ScrollTextViewAct" />
+        <activity android:name=".activity.editTextAct.InputTextAndPicAct" />
+        <activity android:name=".activity.editTextAct.EditTextDemoAct" />
+        <activity android:name=".activity.editTextAct.SpecialCharcterEditTextAct" />
+        <activity android:name=".activity.editTextAct.AutoCompleteTextViewAct" />
+        <activity android:name=".activity.buttonAct.ButtonDemoAct" />
+        <activity android:name=".activity.buttonAct.ButtonAct" />
+        <activity android:name=".activity.buttonAct.TextAndPicButtonAct"></activity>
     </application>
 
 </manifest>

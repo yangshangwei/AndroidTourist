@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+
+    <TextView
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="单选AutoCompleteTextView" />
+
+    <AutoCompleteTextView
+        android:id="@+id/id_actv"
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多选MultiAutoCompleteTextView" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/id_actv_multi"
+        style="@style/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
