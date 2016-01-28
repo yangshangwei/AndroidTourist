@@ -17,6 +17,7 @@ import com.turing.base.AppContext;
 import com.turing.base.R;
 import com.turing.base.activity.buttonAct.ButtonDemoAct;
 import com.turing.base.activity.editTextAct.EditTextDemoAct;
+import com.turing.base.activity.imageViewAct.ImageViewDemoListAct;
 import com.turing.base.activity.intentAct.ApplicationTransActivity;
 import com.turing.base.activity.intentAct.ClipBoardTransStringActivity;
 import com.turing.base.activity.intentAct.ClipboardTransObjectDataAct;
@@ -26,7 +27,9 @@ import com.turing.base.activity.intentAct.StarActivityForResultAct;
 import com.turing.base.activity.intentAct.StaticTransmitActivity;
 import com.turing.base.activity.intentAct.XianSiDiaoyongAct;
 import com.turing.base.activity.lifeCircle.LifeCircleActivity;
+import com.turing.base.activity.listViewAct.ListViewDemoAct;
 import com.turing.base.activity.textViewAct.TextViewDemoAct;
+import com.turing.base.activity.viewstub.ViewStubAct;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.beans.MainMenuListItemBean;
 import com.turing.base.utils.ListViewDataFactory;
@@ -71,7 +74,10 @@ public class UI_Base extends Activity {
             "进度条控件",
             "列表控件",
             "滚动控件",
-            "ImageSwitcher","GridView","TabHost","ViewStub"
+            "ImageSwitcher",
+            "GridView",
+            "TabHost",
+            "ViewStub"
            };
 
 
@@ -151,31 +157,7 @@ public class UI_Base extends Activity {
                         startActivity(intent7);
                         break;
                     case 7:// 通过Clipboard传递复杂对象
-                        Intent intent8 = new Intent(UI_Base.this, ClipboardTransObjectDataAct.class);
-
-                        ClipboardManager cbm = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-
-                        // 通过Clipboard传递复杂对象
-                        Data  data3 = new Data();
-                        data3.setId(55);
-                        data3.setName("Clipboard传递复杂对象");
-
-                        // 将data2对象转换成Base64格式的字符串
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        String base64Str = "";
-
-                        try {
-                            ObjectOutputStream oos = new ObjectOutputStream(baos);
-                            oos.writeObject(data3);
-                            // 使用Base64.encodeToString方法将byte[]数据转换为Base64字符串
-                            base64Str = Base64.encodeToString(baos.toByteArray(),Base64.DEFAULT);
-                            oos.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        // 向剪切板写入Base64格式的字符串
-                        cbm.setText(base64Str);
-                        startActivity(intent8);
+                        transObjectByClipBoard();
                         break;
                     case 8:// 通过全局变量来传递数据
 
@@ -204,6 +186,28 @@ public class UI_Base extends Activity {
                     case 13://按钮和复选框控件
                         startActivity(new Intent(UI_Base.this, ButtonDemoAct.class));
                         break;
+                    case 14://ImageView
+                        startActivity(new Intent(UI_Base.this, ImageViewDemoListAct.class));
+                        break;
+                    case 15://时间和日期控件
+                        break;
+                    case 16://进度条控件
+                        break;
+                    case 17://列表控件
+                        startActivity(new Intent(UI_Base.this, ListViewDemoAct.class));
+                        break;
+                    case 18://滚动控件
+
+                        break;
+                    case 19://ImageSwitcher
+                        break;
+                    case 20://GridView
+                        break;
+                    case 21://TabHost
+                        break;
+                    case 22://ViewStub
+                        startActivity(new Intent(UI_Base.this, ViewStubAct.class));
+                        break;
                         // TODO
                     default:
                         break;
@@ -230,5 +234,35 @@ public class UI_Base extends Activity {
             default:
                 break;
         }
+    }
+
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public void transObjectByClipBoard(){
+        Intent intent8 = new Intent(UI_Base.this, ClipboardTransObjectDataAct.class);
+
+        ClipboardManager cbm = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+
+        // 通过Clipboard传递复杂对象
+        Data  data3 = new Data();
+        data3.setId(55);
+        data3.setName("Clipboard传递复杂对象");
+
+        // 将data2对象转换成Base64格式的字符串
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        String base64Str = "";
+
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos.writeObject(data3);
+            // 使用Base64.encodeToString方法将byte[]数据转换为Base64字符串
+            base64Str = Base64.encodeToString(baos.toByteArray(),Base64.DEFAULT);
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // 向剪切板写入Base64格式的字符串
+        cbm.setText(base64Str);
+        startActivity(intent8);
     }
 }

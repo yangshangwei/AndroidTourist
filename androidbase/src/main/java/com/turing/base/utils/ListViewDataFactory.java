@@ -1,5 +1,6 @@
 package com.turing.base.utils;
 
+import com.apkfuns.logutils.LogUtils;
 import com.turing.base.beans.MainMenuListItemBean;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class ListViewDataFactory {
             MainMenuListItemBean bean = new MainMenuListItemBean();
             bean.setContent(datas[i]);
             dataList.add(bean);
-
+            LogUtils.d("增加显示项：" + bean.getContent().toString() + " 成功");
         }
         return dataList ;
     }

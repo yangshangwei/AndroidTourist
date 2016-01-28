@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/item_background_select" >
+
+    <TextView
+        android:id="@+id/group_title"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginLeft="36dp"
+        android:gravity="center"
+        android:text="好友分组"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/group_ico"
+        android:layout_width="24dip"
+        android:layout_height="24dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/rounds_close" />
+
+    <TextView
+        android:id="@+id/split_lines"
+        android:layout_width="1dip"
+        android:layout_height="48dp"
+        android:layout_toLeftOf="@id/group_ico"
+        android:background="#E6E6E6" />
+
+</RelativeLayout>

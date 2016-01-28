@@ -21,8 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".activity.HttpActivity_" />
         <activity android:name=".activity.LoadWebActivity_" />
         <activity android:name=".activity.LoadPicActivity_" />
@@ -95,7 +93,23 @@
         <activity android:name=".activity.editTextAct.AutoCompleteTextViewAct" />
         <activity android:name=".activity.buttonAct.ButtonDemoAct" />
         <activity android:name=".activity.buttonAct.ButtonAct" />
-        <activity android:name=".activity.buttonAct.TextAndPicButtonAct"></activity>
+        <activity android:name=".activity.buttonAct.TextAndPicButtonAct" />
+        <activity android:name=".Service_Base" />
+        <activity android:name=".activity.buttonAct.ImageButtonAct" />
+        <activity android:name=".activity.buttonAct.RadioButtonAct" />
+        <activity android:name=".activity.buttonAct.ToogleButtonAct" />
+        <activity android:name=".activity.buttonAct.CheckBoxAct" />
+        <activity android:name=".activity.listViewAct.ListViewDemoAct" />
+        <activity android:name=".activity.imageViewAct.ImageViewDemoListAct" />
+        <activity android:name=".activity.imageViewAct.ImageViewBase" />
+        <activity android:name=".activity.imageViewAct.ImageViewShowPartAct" />
+        <activity android:name=".activity.imageViewAct.ImageViewMatrixAct" />
+        <activity android:name=".activity.viewstub.ViewStubAct" />
+        <activity android:name=".activity.tabhost.TabHostAct" />
+        <activity android:name=".activity.listViewAct.ListViewWithRadioBtnChkBox" />
+        <activity android:name=".activity.listViewAct.ListViewCRUD" />
+        <activity android:name=".activity.listViewAct.ListViewActivityDemo" />
+        <activity android:name=".activity.listViewAct.ExpandableListViewAct"></activity>
     </application>
 
 </manifest>

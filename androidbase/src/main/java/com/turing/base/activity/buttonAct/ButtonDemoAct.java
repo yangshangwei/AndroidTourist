@@ -61,12 +61,16 @@ public class ButtonDemoAct extends AppCompatActivity {
                         startActivity(new Intent(ButtonDemoAct.this, TextAndPicButtonAct.class));
                         break;
                     case 2:// ImageButton
+                        startActivity(new Intent(ButtonDemoAct.this,ImageButtonAct.class));
                         break;
                     case 3:// RadioButton
+                        startActivity(new Intent(ButtonDemoAct.this,RadioButtonAct.class));
                         break;
                     case 4:// ToogleButton
+                        startActivity(new Intent(ButtonDemoAct.this,ToogleButtonAct.class));
                         break;
                     case 5:// CheckBox
+                        startActivity(new Intent(ButtonDemoAct.this,CheckBoxAct.class));
                         break;
                     default:
                         break;

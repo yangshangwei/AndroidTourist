@@ -15,5 +15,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/id_btn_btnDemo1"
         android:text="按钮2"/>
+    
+    
+    
+    <Button
+        android:id="@+id/id_btn_btnDemo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:layout_below="@+id/id_btn_btnDemo2"
+        android:text="Button Style"/>
+
 
 </RelativeLayout>

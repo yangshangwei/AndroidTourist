@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- android:descendantFocusability="blocksDescendants"-->
+    <TextView
+        android:id="@+id/id_tv_crud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="data"/>
+
+    <!--让checkBox失去焦点，否则listView无法点击
+    <CheckBox
+        android:id="@+id/id_tv_cb_crud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:clickable="false"
+        android:focusableInTouchMode="false"/>
+
+    -->
+
+</RelativeLayout>

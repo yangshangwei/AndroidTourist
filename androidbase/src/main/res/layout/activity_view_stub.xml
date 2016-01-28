@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/id_btn_viewStub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickShowViewStub"
+        android:text="点击加载ViewStub引用的布局" />
+
+    <Button
+        android:id="@+id/id_btn_viewStub2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickHideViewStub"
+        android:text="清除ViewStub引用的布局" />
+<!--
+    <include layout="@layout/activity_view_stub2"/>
+-->
+    <ViewStub
+        android:id="@+id/id_vs_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/button_layout"
+        android:layout="@layout/activity_view_stub2" />
+</LinearLayout>

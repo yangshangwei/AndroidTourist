@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                         "HTTP通信",
                         "ListView使用技巧",
                         "Android控件架构与自定义控件",
-                        "我的UI我做主"};
+                        "UI", "Service"};
 
     @AfterViews
     public void showMenuList() {
@@ -68,6 +68,8 @@ public class MainActivity extends Activity {
             case 3:
                 startActivity(new Intent(MainActivity.this,UI_Base_.class));
                 break;
+            case 4:
+                startActivity(new Intent(MainActivity.this,Service_Base.class));
             default:
                 break;
         }

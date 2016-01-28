@@ -27,20 +27,17 @@ public class TextAndPicButtonAct extends Activity {
 
     /**
      * 第五个按钮 通过代码的方式，在Button上显示图片
+     * TODO 2.3版本没问题，4.1以上版本运行报错
      */
     public void initView() {
 
-        LogUtils.d("111111111111111111");
 
         Button button = (Button) findViewById(R.id.button);
         // 左侧图片
         SpannableString spannableStringLeft = new SpannableString("left");
         Bitmap bitmapLeft = BitmapFactory.decodeResource(getResources(),R.drawable.flag_mark_blue);
-      //  ImageSpan imageSpanLeft = new ImageSpan(bitmapLeft, DynamicDrawableSpan.ALIGN_BOTTOM);
         ImageSpan imageSpanLeft = new ImageSpan(this,bitmapLeft,DynamicDrawableSpan.ALIGN_BOTTOM);
-        LogUtils.d("22222222222222");
         spannableStringLeft.setSpan(imageSpanLeft, 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        LogUtils.d("333333333333");
         // 右侧图片
         SpannableString spannableStringRight = new SpannableString("right");
         Bitmap bitmapRight = BitmapFactory.decodeResource(getResources(),R.drawable.flag_mark_green);
@@ -48,9 +45,7 @@ public class TextAndPicButtonAct extends Activity {
         spannableStringRight.setSpan(imageSpanRight, 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         button.append(spannableStringLeft);
-        LogUtils.d("44444444444444");
         button.append("我的按钮");
         button.append(spannableStringRight);
-        LogUtils.d("55555555");
     }
 }
