@@ -109,7 +109,8 @@
         <activity android:name=".activity.listViewAct.ListViewWithRadioBtnChkBox" />
         <activity android:name=".activity.listViewAct.ListViewCRUD" />
         <activity android:name=".activity.listViewAct.ListViewActivityDemo" />
-        <activity android:name=".activity.listViewAct.ExpandableListViewAct"></activity>
+        <activity android:name=".activity.listViewAct.ExpandableListViewAct" />
+        <activity android:name=".activity.spinnerAct.SpinnerAct"></activity>
     </application>
 
 </manifest>

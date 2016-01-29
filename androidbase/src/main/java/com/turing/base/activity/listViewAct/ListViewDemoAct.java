@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.turing.base.R;
+import com.turing.base.activity.spinnerAct.SpinnerAct;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.utils.ListViewDataFactory;
 
@@ -69,6 +70,7 @@ public class ListViewDemoAct extends AppCompatActivity {
                         startActivity(new Intent(ListViewDemoAct.this,ExpandableListViewAct.class));
                         break;
                     case 5://Spinner
+                        startActivity(new Intent(ListViewDemoAct.this, SpinnerAct.class));
                         break;
                     default:
                         break;
