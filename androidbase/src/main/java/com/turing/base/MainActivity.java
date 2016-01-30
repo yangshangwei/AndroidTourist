@@ -7,6 +7,7 @@ import android.widget.ListView;
 import com.turing.base.activity.HttpActivity_;
 import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.activity.UI_Base_;
+import com.turing.base.activity.service.Service_Base;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.utils.ListViewDataFactory;
 
@@ -39,10 +40,19 @@ public class MainActivity extends Activity {
 
     // ListView中显示的内容
     public static String[] datas = new String[]{
-                        "HTTP通信",
+                        "网络与通信",
                         "ListView使用技巧",
                         "Android控件架构与自定义控件",
-                        "UI", "Service"};
+                        "Widget详解",
+                        "Service",
+                        "全局事件--广播",
+                        "Content Provider",
+                        "Activity",
+                        "友好的互动提醒--对话框、Toast、Notification",
+                        "友好的菜单--Menu",
+                        "移动的信息仓库--数据存储",
+                        "多媒体开发",
+                        "......"};
 
     @AfterViews
     public void showMenuList() {
@@ -56,19 +66,19 @@ public class MainActivity extends Activity {
     @ItemClick(R.id.id_lv_menu_list)
     public void itemClick(int position){
         switch (position){
-            case 0:
+            case 0://网络与通信
                 startActivity(new Intent(MainActivity.this,HttpActivity_.class));
                 break;
-            case 1:
+            case 1://ListView使用技巧
                 startActivity(new Intent(MainActivity.this,ListViewFunctionsActivity_.class));
                 break;
             case 2:
                 // TODO
                 break;
-            case 3:
+            case 3://UI
                 startActivity(new Intent(MainActivity.this,UI_Base_.class));
                 break;
-            case 4:
+            case 4://Service
                 startActivity(new Intent(MainActivity.this,Service_Base.class));
             default:
                 break;

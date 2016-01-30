@@ -94,7 +94,7 @@
         <activity android:name=".activity.buttonAct.ButtonDemoAct" />
         <activity android:name=".activity.buttonAct.ButtonAct" />
         <activity android:name=".activity.buttonAct.TextAndPicButtonAct" />
-        <activity android:name=".Service_Base" />
+        <activity android:name=".activity.service.Service_Base" />
         <activity android:name=".activity.buttonAct.ImageButtonAct" />
         <activity android:name=".activity.buttonAct.RadioButtonAct" />
         <activity android:name=".activity.buttonAct.ToogleButtonAct" />
@@ -110,7 +110,28 @@
         <activity android:name=".activity.listViewAct.ListViewCRUD" />
         <activity android:name=".activity.listViewAct.ListViewActivityDemo" />
         <activity android:name=".activity.listViewAct.ExpandableListViewAct" />
-        <activity android:name=".activity.spinnerAct.SpinnerAct"></activity>
+        <activity android:name=".activity.spinnerAct.SpinnerAct" />
+        <activity android:name=".activity.scrollViewAct.ScrollViewDemoList" />
+        <activity android:name=".activity.scrollViewAct.ScrollViewAct" />
+        <activity android:name=".activity.scrollViewAct.HorizontalScrollViewAct" />
+        <activity android:name=".activity.scrollViewAct.HorVertScrollViewAct" />
+        <activity android:name=".activity.scrollViewAct.GalleryAct" />
+        <activity android:name=".activity.imageSwitcher.ImageSwitcherAct" />
+        <activity android:name=".activity.gridViewAct.GridViewAct" />
+
+        <service
+            android:name=".activity.service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activity.service.ServiceLifeCycle_" />
+        <activity android:name=".activity.service.ServiceBindAct" />
+        <activity android:name=".activity.service.PlayMusicBackGroundAct" />
+
+        <service
+            android:name=".activity.service.PlayMusicService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

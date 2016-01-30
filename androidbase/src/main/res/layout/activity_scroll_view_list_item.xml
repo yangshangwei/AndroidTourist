@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp">
+    android:gravity="center|left"
+    android:layout_margin="10dp"
+    android:layout_height="match_parent">
+
 
     <ImageView
-        android:id="@+id/id_iv_spinner"
+        android:id="@+id/id_sv_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:src="@drawable/tag_yellow"/>
+        android:src="@drawable/tag_blue"/>
 
     <TextView
-        android:id="@+id/id_tv_spinner"
+        android:id="@+id/id_sv_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="fake"/>
-
+        android:layout_margin="10dp"
+        android:text="test"/>
 </LinearLayout>

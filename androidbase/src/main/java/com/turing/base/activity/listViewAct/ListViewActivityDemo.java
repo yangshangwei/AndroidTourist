@@ -19,8 +19,10 @@ public class ListViewActivityDemo extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //使用simpleAdapter的数据用一般都是HashMap构成的List，list的每一节对应ListView的每一行。HashMap的每个键值数据映射到布局文件中对应id的组件上。
-        SimpleAdapter adapter = new SimpleAdapter(this,getData(),R.layout.activity_list_view_activity_demo,
+        SimpleAdapter adapter = new SimpleAdapter(this,getData(),
+                R.layout.activity_list_view_activity_demo,
                 new String[]{"title","info","img"},
                 new int[]{R.id.title,R.id.info,R.id.img});
         setListAdapter(adapter);

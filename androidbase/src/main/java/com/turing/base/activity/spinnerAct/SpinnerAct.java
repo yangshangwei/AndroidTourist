@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.turing.base.R;
@@ -86,9 +87,14 @@ public class SpinnerAct extends Activity {
         datalist.add(item2);
 
 
+
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, datalist,
                 R.layout.spinnner_item, new String[]{"ivLogo", "appname"},
                 new int[]{R.id.id_iv_spinner, R.id.id_tv_spinner});
+
+        // 没有数据时，显示的视图
+        TextView emptyView = (TextView)findViewById(R.id.id_tv_empty);
+        spinner3.setEmptyView(emptyView);
 
         spinner3.setAdapter(simpleAdapter);
 

@@ -17,6 +17,8 @@ import com.turing.base.AppContext;
 import com.turing.base.R;
 import com.turing.base.activity.buttonAct.ButtonDemoAct;
 import com.turing.base.activity.editTextAct.EditTextDemoAct;
+import com.turing.base.activity.gridViewAct.GridViewAct;
+import com.turing.base.activity.imageSwitcher.ImageSwitcherAct;
 import com.turing.base.activity.imageViewAct.ImageViewDemoListAct;
 import com.turing.base.activity.intentAct.ApplicationTransActivity;
 import com.turing.base.activity.intentAct.ClipBoardTransStringActivity;
@@ -28,6 +30,8 @@ import com.turing.base.activity.intentAct.StaticTransmitActivity;
 import com.turing.base.activity.intentAct.XianSiDiaoyongAct;
 import com.turing.base.activity.lifeCircle.LifeCircleActivity;
 import com.turing.base.activity.listViewAct.ListViewDemoAct;
+import com.turing.base.activity.scrollViewAct.ScrollViewDemoList;
+import com.turing.base.activity.tabhost.TabHostAct;
 import com.turing.base.activity.textViewAct.TextViewDemoAct;
 import com.turing.base.activity.viewstub.ViewStubAct;
 import com.turing.base.adapter.MainMenuListAdapter;
@@ -197,13 +201,16 @@ public class UI_Base extends Activity {
                         startActivity(new Intent(UI_Base.this, ListViewDemoAct.class));
                         break;
                     case 18://滚动控件
-
+                        startActivity(new Intent(UI_Base.this, ScrollViewDemoList.class));
                         break;
                     case 19://ImageSwitcher
+                        startActivity(new Intent(UI_Base.this, ImageSwitcherAct.class));
                         break;
                     case 20://GridView
+                        startActivity(new Intent(UI_Base.this, GridViewAct.class));
                         break;
                     case 21://TabHost
+                        startActivity(new Intent(UI_Base.this, TabHostAct.class));
                         break;
                     case 22://ViewStub
                         startActivity(new Intent(UI_Base.this, ViewStubAct.class));

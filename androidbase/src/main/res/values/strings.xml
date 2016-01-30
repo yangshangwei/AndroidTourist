@@ -35,6 +35,6 @@
 
     <string name="upload">上传(HttpURLConnection/HttpClient)</string>
     <string name="title_activity_life_circle">LifeCircleActivity</string>
-    
+
     <string name="city_prompt">选择城市</string>
 </resources>
