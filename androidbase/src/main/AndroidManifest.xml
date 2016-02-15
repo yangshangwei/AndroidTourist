@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".AppContext"
@@ -94,7 +95,7 @@
         <activity android:name=".activity.buttonAct.ButtonDemoAct" />
         <activity android:name=".activity.buttonAct.ButtonAct" />
         <activity android:name=".activity.buttonAct.TextAndPicButtonAct" />
-        <activity android:name=".activity.service.Service_Base" />
+        <activity android:name=".activity.service.ServiceDemoAct" />
         <activity android:name=".activity.buttonAct.ImageButtonAct" />
         <activity android:name=".activity.buttonAct.RadioButtonAct" />
         <activity android:name=".activity.buttonAct.ToogleButtonAct" />
@@ -118,20 +119,55 @@
         <activity android:name=".activity.scrollViewAct.GalleryAct" />
         <activity android:name=".activity.imageSwitcher.ImageSwitcherAct" />
         <activity android:name=".activity.gridViewAct.GridViewAct" />
-
-        <service
-            android:name=".activity.service.MyService"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".activity.service.ServiceLifeCycle_" />
         <activity android:name=".activity.service.ServiceBindAct" />
         <activity android:name=".activity.service.PlayMusicBackGroundAct" />
+        <activity
+            android:name=".activity.service.BootCompletedMessageAct"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <service
+            android:name=".activity.service.MyService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.turing.base.activity.service.MyService" />
+            </intent-filter>
+        </service>
+        <service
             android:name=".activity.service.PlayMusicService"
+            android:enabled="true" />
+
+        <!-- 开机广播 -->
+        <receiver android:name=".activity.service.StartupReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 开机启动服务 -->
+        <service
+            android:name=".activity.service.StartupService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+        <service
+            android:name=".activity.service.aidl.AIDLService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.turing.base.activity.service.aidl.AIDLService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.service.aidl.AIDLActivityDemo" />
+
+        <service
+            android:name=".activity.service.MyService_StartService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

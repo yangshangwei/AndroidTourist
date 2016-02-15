@@ -7,6 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.service.ServiceDemoAct">
+    tools:context="com.turing.base.activity.service.BootCompletedMessageAct">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="MyService已启动"
+        />
 
 </RelativeLayout>

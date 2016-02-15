@@ -18,11 +18,12 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         LogUtils.d("MyService onBind,Thread ID: " + Thread.currentThread().getId());
-        return  myBinder ;
+        return myBinder;
     }
 
     /**
      * 重新绑定时 ，调用此方法
+     *
      * @param intent
      */
     @Override
@@ -32,7 +33,8 @@ public class MyService extends Service {
     }
 
     /**
-     * 解除绑定时调用改方法
+     * 解除绑定时调用该方法
+     *
      * @param intent
      * @return
      */
@@ -43,17 +45,10 @@ public class MyService extends Service {
     }
 
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         LogUtils.e("service onCreate,Thread ID: " + Thread.currentThread().getId());
-    }
-
-    @Override
-    public void onStart(Intent intent, int startId) {
-        super.onStart(intent, startId);
-        LogUtils.e("service onStart,Thread ID: " + Thread.currentThread().getId());
     }
 
 
@@ -63,6 +58,7 @@ public class MyService extends Service {
         return super.onStartCommand(intent, flags, startId);
 
     }
+
 
     @Override
     public void onDestroy() {

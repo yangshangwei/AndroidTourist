@@ -34,10 +34,12 @@ public class ServiceLifeCycle extends AppCompatActivity {
     public  void initEvents(View view) {
         switch (view.getId()){
             case R.id.id_btn_startService:
-                startService(new Intent(ServiceLifeCycle.this ,MyService.class));
+               // startService(new Intent(ServiceLifeCycle.this ,MyService.class));
+                startService(new Intent(ServiceLifeCycle.this ,MyService_StartService.class));
                 break;
             case R.id.id_btn_stopService:
-                stopService(new Intent(ServiceLifeCycle.this ,MyService.class));
+               // stopService(new Intent(ServiceLifeCycle.this ,MyService.class));
+                stopService(new Intent(ServiceLifeCycle.this, MyService_StartService.class));
                 break;
             default:
                 break;

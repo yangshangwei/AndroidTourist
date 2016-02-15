@@ -7,7 +7,7 @@ import android.widget.ListView;
 import com.turing.base.activity.HttpActivity_;
 import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.activity.UI_Base_;
-import com.turing.base.activity.service.Service_Base;
+import com.turing.base.activity.service.ServiceDemoAct;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.utils.ListViewDataFactory;
 
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this,UI_Base_.class));
                 break;
             case 4://Service
-                startActivity(new Intent(MainActivity.this,Service_Base.class));
+                startActivity(new Intent(MainActivity.this,ServiceDemoAct.class));
             default:
                 break;
         }

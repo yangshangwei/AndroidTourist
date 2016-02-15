@@ -7,31 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.turing.base.activity.service.ServiceLifeCycle">
+
+    tools:context="com.turing.base.activity.service.aidl.AIDLActivityDemo">
 
 
     <Button
-        android:id="@+id/id_btn_startService"
+        android:id="@+id/id_btn_aidl_bind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Start Service" />
+        android:text="绑定AIDL服务" />
 
     <Button
-        android:id="@+id/id_btn_stopService"
+        android:id="@+id/id_btn_aidl_call"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/id_btn_aidl_bind"
         android:layout_margin="10dp"
-        android:layout_below="@+id/id_btn_startService"
-        android:text="Stop Service" />
+        android:text="调用AIDL服务" />
 
     <TextView
-        android:id="@+id/id_tv_serviceLife"
-        android:layout_width="match_parent"
+        android:id="@+id/id_tv_aidl_result"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/id_btn_aidl_call"
+        android:layout_below="@+id/id_btn_aidl_call"
         android:layout_margin="10dp"
-        android:layout_alignLeft="@+id/id_btn_stopService"
-        android:layout_below="@+id/id_btn_stopService"
-        android:text="注意观察日志" />
+        android:text="无" />
 
 </RelativeLayout>
