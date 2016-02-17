@@ -16,6 +16,14 @@ public class MyService extends Service {
 
 
     @Override
+    public void onCreate() {
+        super.onCreate();
+        LogUtils.e("service onCreate,Thread ID: " + Thread.currentThread().getId());
+    }
+
+
+
+    @Override
     public IBinder onBind(Intent intent) {
         LogUtils.d("MyService onBind,Thread ID: " + Thread.currentThread().getId());
         return myBinder;
@@ -45,19 +53,7 @@ public class MyService extends Service {
     }
 
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        LogUtils.e("service onCreate,Thread ID: " + Thread.currentThread().getId());
-    }
 
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e("service onStartCommand,Thread ID: " + Thread.currentThread().getId());
-        return super.onStartCommand(intent, flags, startId);
-
-    }
 
 
     @Override

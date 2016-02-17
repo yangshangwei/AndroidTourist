@@ -40,13 +40,16 @@ public class PlayMusicBackGroundAct extends AppCompatActivity  implements View.O
 
     @Override
     public void onClick(View v) {
+
+        Intent serviceIntent = new Intent(PlayMusicBackGroundAct.this,PlayMusicService.class);
+
         switch(v.getId()){
             case R.id.id_btn_playMusic:
-                startService(new Intent(PlayMusicBackGroundAct.this,PlayMusicService.class));
+                startService(serviceIntent);
                 this.finish();
                 break;
             case R.id.id_btn_stopMusic:
-                stopService(new Intent(PlayMusicBackGroundAct.this,PlayMusicService.class));
+                stopService(serviceIntent);
                 break;
             default:
                 break;

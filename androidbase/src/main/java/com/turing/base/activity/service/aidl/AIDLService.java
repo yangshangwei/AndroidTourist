@@ -7,9 +7,6 @@ import android.os.RemoteException;
 
 public class AIDLService extends Service {
 
-    /**
-     *
-     */
     public class MyServiceImpl extends IMyService.Stub {
 
         @Override
@@ -22,8 +19,4 @@ public class AIDLService extends Service {
     public IBinder onBind(Intent intent) {
         return new MyServiceImpl();
     }
-
-
-
-
 }

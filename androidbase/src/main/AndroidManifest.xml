@@ -153,6 +153,8 @@
             android:name=".activity.service.StartupService"
             android:enabled="true"
             android:exported="true" />
+
+        <!-- AIDL -->
         <service
             android:name=".activity.service.aidl.AIDLService"
             android:enabled="true"
@@ -167,7 +169,16 @@
         <service
             android:name=".activity.service.MyService_StartService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
+        <service
+            android:name=".activity.service.MyService_BindService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activity.Dlg_Tst_Ntf.AlertDialogAct.AlertDialogDemoListAct" />
+        <activity android:name=".activity.Dlg_Tst_Ntf.Dlg_Tst_Ntf" />
+        <activity android:name=".activity.Dlg_Tst_Ntf.ToastAct.ToastDemoListAct" />
+        <activity android:name=".activity.Dlg_Tst_Ntf.NotifcationAct.NotificationDemoListAct"></activity>
     </application>
 
 </manifest>

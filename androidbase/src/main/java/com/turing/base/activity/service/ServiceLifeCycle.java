@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.turing.base.R;
@@ -25,6 +26,11 @@ public class ServiceLifeCycle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Service 生命周期");
+
+        TextView tv = new TextView(this);
+        tv.setFocusable(false);
+        tv.setFocusableInTouchMode(false);
+        tv.setEnabled(false);
 
         LogUtils.d("ServiceLifeCycle Activity onCreate, Thread id:" + Thread.currentThread().getId());
     }

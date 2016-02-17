@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.ListView;
 
+import com.turing.base.activity.Dlg_Tst_Ntf.Dlg_Tst_Ntf;
 import com.turing.base.activity.HttpActivity_;
 import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.activity.UI_Base_;
@@ -80,6 +81,22 @@ public class MainActivity extends Activity {
                 break;
             case 4://Service
                 startActivity(new Intent(MainActivity.this,ServiceDemoAct.class));
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:// 友好的互动提醒--对话框、Toast、Notification
+                startActivity(new Intent(MainActivity.this, Dlg_Tst_Ntf.class));
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
             default:
                 break;
         }

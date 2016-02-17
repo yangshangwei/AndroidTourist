@@ -19,29 +19,30 @@ public class ServiceBindAct extends Activity implements View.OnClickListener {
 
     private Button  bindServiceBtn, unBindServiceBtn;
     private Intent serviceIntent ;
-    private MyService myService ;
+    private MyService_BindService myServiceBindService;
+
     private ServiceConnection serviceConnection = new ServiceConnection() {
 
         /**
-         * 成功连接服务后,改方法被调用，在该方法中可以获得MyService对象
+         * 成功连接服务后,改方法被调用，在该方法中可以获得MyService_BindService对象
          * @param name
          * @param service
          */
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            // 获得MyService
-            myService =  ((MyService.MyBinder)service).getMyService();
+            // 获得MyService  向下转型
+            myServiceBindService = ((MyService_BindService.MySBinder)service).getMyService();
             Toast.makeText(ServiceBindAct.this,"Service Connected",Toast.LENGTH_SHORT).show();
         }
 
 
         /**
-         * 连接服务失败后,改方法被调用
+         * Android系统在同service的连接意外丢失时调用这个．比如当service崩溃了或被强杀了
          * @param name
          */
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            myService = null;
+            myServiceBindService = null;
             Toast.makeText(ServiceBindAct.this,"Service Faield",Toast.LENGTH_SHORT).show();
         }
     };
@@ -62,7 +63,7 @@ public class ServiceBindAct extends Activity implements View.OnClickListener {
         unBindServiceBtn.setOnClickListener(this);
 
 
-        serviceIntent = new Intent(ServiceBindAct.this,MyService.class);
+        serviceIntent = new Intent(ServiceBindAct.this,MyService_BindService.class);
     }
 
 
@@ -79,7 +80,4 @@ public class ServiceBindAct extends Activity implements View.OnClickListener {
                 break;
         }
     }
-
-
-
 }
