@@ -8,6 +8,9 @@ import com.turing.base.activity.Dlg_Tst_Ntf.Dlg_Tst_Ntf;
 import com.turing.base.activity.HttpActivity_;
 import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.activity.UI_Base_;
+import com.turing.base.activity.activityDemo.ActivityDemoList;
+import com.turing.base.activity.broadcastDemo.BroadcastDemoAct;
+import com.turing.base.activity.dataStore.DataStoreListDemoAct;
 import com.turing.base.activity.service.ServiceDemoAct;
 import com.turing.base.adapter.MainMenuListAdapter;
 import com.turing.base.utils.ListViewDataFactory;
@@ -46,7 +49,7 @@ public class MainActivity extends Activity {
                         "Android控件架构与自定义控件",
                         "Widget详解",
                         "Service",
-                        "全局事件--广播",
+                        "全局事件--BroadcastReceiver",
                         "Content Provider",
                         "Activity",
                         "友好的互动提醒--对话框、Toast、Notification",
@@ -76,24 +79,27 @@ public class MainActivity extends Activity {
             case 2:
                 // TODO
                 break;
-            case 3://UI
+            case 3://Widget详解
                 startActivity(new Intent(MainActivity.this,UI_Base_.class));
                 break;
             case 4://Service
                 startActivity(new Intent(MainActivity.this,ServiceDemoAct.class));
                 break;
-            case 5:
+            case 5:// 全局事件--广播
+                startActivity(new Intent(MainActivity.this,BroadcastDemoAct.class));
                 break;
             case 6:
                 break;
-            case 7:
+            case 7: // Activity
+                startActivity(new Intent(MainActivity.this, ActivityDemoList.class));
                 break;
             case 8:// 友好的互动提醒--对话框、Toast、Notification
                 startActivity(new Intent(MainActivity.this, Dlg_Tst_Ntf.class));
                 break;
             case 9:
                 break;
-            case 10:
+            case 10: // 移动的信息仓库--数据存储
+                startActivity(new Intent(MainActivity.this, DataStoreListDemoAct.class));
                 break;
             case 11:
                 break;

@@ -37,4 +37,5 @@
     <string name="title_activity_life_circle">LifeCircleActivity</string>
 
     <string name="city_prompt">选择城市</string>
+    <string name="title_activity_sp_base_use">SpBaseUseAct</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header android:fragment="com.turing.base.activity.dataStore.sharedPreference.PrefsActivityAllVersion$PrefsFragment"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Category 1 prefs" >
+        <extra android:name="pref-resource" android:value="app_prefs_cat1" />
+    </header>
+
+    <header android:fragment="com.turing.base.activity.dataStore.sharedPreference.PrefsActivityAllVersion$PrefsFragment"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="Category 2 prefs" >
+        <extra android:name="pref-resource" android:value="app_prefs_cat2" />
+    </header>
+
+    <header android:fragment="com.turing.base.activity.dataStore.sharedPreference.PrefsActivityAllVersion$PrefsFragment"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Category 3 prefs" >
+        <extra android:name="pref-resource" android:value="app_prefs_cat3" />
+    </header>
+
+    <header
+        android:icon="@drawable/tag_blue"
+        android:title="Blackmoon Info Tech Services"
+        android:summary="link to BITS blog">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.blackmoonit.com/2012/07/all_api_prefsactivity/" />
+    </header>
+
+</preference-headers>

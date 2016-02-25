@@ -36,5 +36,9 @@ public class AppContext extends Application {
 
         // 配置日志前缀
         LogUtils.configTagPrefix = "MrYang-";
+
+        // 全局异常捕获CrashHandler  展示屏蔽掉
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
     }
 }

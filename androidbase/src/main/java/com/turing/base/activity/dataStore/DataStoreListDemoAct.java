@@ -1,4 +1,4 @@
-package com.turing.base.activity.Dlg_Tst_Ntf;
+package com.turing.base.activity.dataStore;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -9,24 +9,22 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.turing.base.R;
-import com.turing.base.activity.Dlg_Tst_Ntf.DialogAct.DialogDemoListAct;
-import com.turing.base.activity.Dlg_Tst_Ntf.NotifcationAct.NotificationDemoListAct;
-import com.turing.base.activity.Dlg_Tst_Ntf.ToastAct.ToastDemoListAct;
+import com.turing.base.activity.dataStore.fileStore.FileStoreDemoAct;
+import com.turing.base.activity.dataStore.sharedPreference.SharedPreferencesDemoAct;
+import com.turing.base.activity.dataStore.sqlite.SQLiteDemoAct;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-public class Dlg_Tst_Ntf extends ListActivity implements AdapterView.OnItemClickListener {
-
+public class DataStoreListDemoAct extends ListActivity implements AdapterView.OnItemClickListener {
 
     // ListView中要显示的item
     private String[] arr = new String[]{
-            "AlertDialog + ProgressDialog",
-            "Toast",
-            "Notification"
+            "SharedPreferences",
+            "文件存储",
+            "SQLite数据库"
     };
 
 
@@ -69,7 +67,7 @@ public class Dlg_Tst_Ntf extends ListActivity implements AdapterView.OnItemClick
 
         for (int i = 0; i < arr.length; i++) {
             Map<String, Object> item = new HashMap<String, Object>();
-            item.put("img", R.drawable.flag_mark_yellow);
+            item.put("img", R.drawable.gur_project_2);
             item.put("info", arr[i]);
             // 将Map添加到List
             datalist.add(item);
@@ -80,15 +78,15 @@ public class Dlg_Tst_Ntf extends ListActivity implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
-            case 0: // AlertDialog + ProgressDialog
-                startActivity(new Intent(Dlg_Tst_Ntf.this, DialogDemoListAct.class));
+        switch (position) {
+            case 0: //SharedPreferences
+                startActivity(new Intent(this, SharedPreferencesDemoAct.class));
                 break;
-            case 1: // Toast
-                startActivity(new Intent(Dlg_Tst_Ntf.this, ToastDemoListAct.class));
+            case 1: //文件存储
+                startActivity(new Intent(this, FileStoreDemoAct.class));
                 break;
-            case 2:// Notification
-                startActivity(new Intent(Dlg_Tst_Ntf.this, NotificationDemoListAct.class));
+            case 2://SQLite数据库
+                startActivity(new Intent(this, SQLiteDemoAct.class));
                 break;
             default:
                 break;

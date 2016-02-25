@@ -6,6 +6,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
     <application
         android:name=".AppContext"
@@ -175,10 +183,71 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.Dlg_Tst_Ntf.AlertDialogAct.AlertDialogDemoListAct" />
+        <activity android:name=".activity.Dlg_Tst_Ntf.DialogAct.DialogDemoListAct" />
         <activity android:name=".activity.Dlg_Tst_Ntf.Dlg_Tst_Ntf" />
         <activity android:name=".activity.Dlg_Tst_Ntf.ToastAct.ToastDemoListAct" />
-        <activity android:name=".activity.Dlg_Tst_Ntf.NotifcationAct.NotificationDemoListAct"></activity>
+        <activity android:name=".activity.Dlg_Tst_Ntf.NotifcationAct.NotificationDemoListAct" />
+        <activity android:name=".activity.Dlg_Tst_Ntf.DialogAct.ActivityDialog" />
+        <activity android:name=".activity.activityDemo.ActivityDemoList" />
+        <activity android:name=".activity.dataStore.DataStoreListDemoAct" />
+        <activity android:name=".activity.dataStore.sharedPreference.SharedPreferencesDemoAct" />
+        <activity android:name=".activity.dataStore.fileStore.FileStoreDemoAct" />
+        <activity android:name=".activity.dataStore.sqlite.SQLiteDemoAct" />
+
+        <!-- 半透明的 对话框样式的Act -->
+        <activity
+            android:name=".activity.activityDemo.TranslucenceWindowAct"
+            android:theme="@style/MyTheme" />
+        <activity android:name=".activity.activityDemo.SecondAnimAct" />
+        <activity android:name=".activity.broadcastDemo.BroadcastDemoAct" />
+
+        <!--
+        静态注册短信接收广播器
+        <receiver
+            android:name=".activity.broadcastDemo.ShortMessageReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        -->
+        <activity android:name=".activity.broadcastDemo.SmsMessageAct" />
+
+        <!-- 来电 -->
+        <receiver
+            android:name=".activity.broadcastDemo.CallInReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <!-- 去电 -->
+        <receiver
+            android:name=".activity.broadcastDemo.CallOutReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.broadcastDemo.BatteryInfoAct" />
+        <activity android:name=".activity.dataStore.sharedPreference.SpBaseUseAct" />
+        <activity android:name=".activity.dataStore.sharedPreference.SpComplexDataAct" />
+        <activity android:name=".activity.dataStore.sharedPreference.PreferenceActivityDemo" />
+        <activity
+            android:name=".activity.dataStore.sharedPreference.PrefsActivityAllVersion"
+            android:enabled="true"
+            android:label="Settings">
+            <intent-filter>
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.dataStore.fileStore.SDCardWriteReadAct" />
+        <activity android:name=".activity.dataStore.fileStore.Xml2JavaObjectAct" />
+        <activity android:name=".activity.dataStore.fileStore.JarZipAct"></activity>
     </application>
 
 </manifest>
