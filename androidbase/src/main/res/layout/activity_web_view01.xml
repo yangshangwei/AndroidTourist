@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2D97CB">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:text="Back" />
+
+
+        <Button
+            android:id="@+id/btn_top"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:text="回顶部" />
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_toLeftOf="@id/btn_top"
+            android:background="@android:color/transparent"
+            android:text="刷新" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_toLeftOf="@id/btn_refresh"
+            android:layout_toRightOf="@id/btn_back"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="文章标题"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+    <WebView
+        android:id="@+id/wView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--使用自定义的WebView方便监听滚动事件-->
+    <com.turing.base.activity.webview.MyWebView
+        android:id="@+id/id_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.turing.base.activity.webview.MyWebView>
+
+
+    <Button
+        android:id="@+id/btn_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="回到顶部"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

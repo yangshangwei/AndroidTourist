@@ -38,4 +38,12 @@
 
     <string name="city_prompt">选择城市</string>
     <string name="title_activity_sp_base_use">SpBaseUseAct</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tab_menu_alert">文字1</string>
+    <string name="tab_menu_profile">文字2</string>
+    <string name="tab_menu_pay">文字3</string>
+    <string name="tab_menu_setting">文字4</string>
 </resources>

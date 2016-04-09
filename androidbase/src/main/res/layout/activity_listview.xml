@@ -24,11 +24,11 @@
 
 
     <ImageView
-        android:id="@+id/id_iv_empty_listView"
+        android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/tag_blue"
-        android:layout_below="@+id/id_listview_functions"/>
+        android:layout_below="@+id/id_lv_title"/>
 
 
 </RelativeLayout>

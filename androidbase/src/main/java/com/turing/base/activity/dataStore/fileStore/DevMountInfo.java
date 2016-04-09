@@ -17,7 +17,6 @@ import java.util.concurrent.Executors;
 /**
  * 用于适配不同型号手机，反射获取SD卡路径和状态
  *
- * @author johdan
  */
 public class DevMountInfo {
 

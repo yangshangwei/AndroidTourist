@@ -9,7 +9,7 @@ import android.preference.PreferenceScreen;
 import com.turing.base.R;
 
 /**
- *   3.0版本以后就需要使用PreferenceFragment，这里用过时的也没关系
+ * 3.0版本以后就需要使用PreferenceFragment，这里用过时的也没关系
  */
 public class PreferenceActivityDemo extends PreferenceActivity implements Preference.OnPreferenceChangeListener {
 
@@ -58,12 +58,13 @@ public class PreferenceActivityDemo extends PreferenceActivity implements Prefer
     /**
      * 状态改变后的自动文件存储 需要继承PreferenceActivity的类和实现OnPreferenceChangeListener接口,
      * 重写onPreferenceTreeClick方法进行业务逻辑处理
+     *
      * @param preferenceScreen
      * @param preference
      * @return
      */
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,Preference preference) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         // 判断选中的是否为"是否保存个人信息"列表项的复选框
         if ("yesno_save_individual_info".equals(preference.getKey())) {
             // 设置姓名为可选或者不可选

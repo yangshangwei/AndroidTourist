@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>显示获取的联系人列表</title>
+    <script language="JavaScript">
+        function show(jsondata)
+        {
+            //将传递过来的Json转换为对象
+            var jsonobjs = eval(jsondata);
+            //获取下面定义的表格
+            var table = document.getElementById("PersonTable");
+            //遍历上面创建的Json对象,将每个对象添加为
+            //表格中的一行,而它的每个属性作为一列
+            for(var i = 0;i < jsonobjs.length;i++)
+            {
+                //添加一行,三个单元格:
+                var tr = table.insertRow(table.rows.length);
+                var td1 = tr.insertCell(0);
+                var td2 = tr.insertCell(1);
+                td2.align = "center";
+                var td3 = tr.insertCell(2);
+                //设置单元格的内容和属性
+                //其中innerHTML为设置或者获取位于对象起始和结束标签内的HTML
+                //jsonobjs[i]为对象数组中的第i个对象
+                td1.innerHTML = jsonobjs[i].id;
+                td2.innerHTML = jsonobjs[i].name;
+                //为现实的内容添加超链接,超链接会调用Java代码中的
+                //call方法并且把内容作为参数传递过去
+                td3.innerHTML = "<a href = 'javascript:sharp.call(\""+jsonobjs[i].phone + "\")'>"
+                +jsonobjs[i].phone + "</a>";;
+            }
+        }
+    </script>
+</head>
+
+<!-- onload指定该页面被加载时调用的方法,这里调用的是Java代码中的contactlist方法-->
+<body style="margin:0px; background-color:#FFFFFF; color:#000000;" onload = "javascript:sharp.contactlist()">
+<!--定义一个表格-->
+<table border = "0" width = "100%" id = "PersonTable" cellspacing = "0">
+    <tr>
+        <td width = "15%">用户id</td>
+        <td align = "center">姓名</td>
+        <td width = "15%">号码</td>
+    </tr>
+</table>
+</body>
+</html>

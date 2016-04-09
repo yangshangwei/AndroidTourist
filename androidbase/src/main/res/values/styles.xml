@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
 
@@ -27,4 +27,44 @@
     <style name="MyTheme" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@drawable/msg_background</item>
     </style>
+
+
+    <!--使用RadioButton作为底部导航栏,FragmentPractice2中的示例-->
+    <style name="tab_menu_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/tab_menu_bg_radiobutton</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:textColor">@drawable/tab_menu_text_radiobutton</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--使用TextView作为底部导航栏,FragmentPractice3 带有提示消息的示例-->
+
+    <style name="tab_menu_text">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@drawable/tab_menu_text</item>
+    </style>
+
+
+    <style name="tab_menu_bgnum">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">@drawable/bg_num</item>
+        <item name="android:layout_marginLeft">-10dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+
+
+
+
 </resources>

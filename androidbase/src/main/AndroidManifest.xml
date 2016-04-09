@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".AppContext"
@@ -247,7 +249,38 @@
         </activity>
         <activity android:name=".activity.dataStore.fileStore.SDCardWriteReadAct" />
         <activity android:name=".activity.dataStore.fileStore.Xml2JavaObjectAct" />
-        <activity android:name=".activity.dataStore.fileStore.JarZipAct"></activity>
+        <activity android:name=".activity.dataStore.fileStore.JarZipAct" />
+        <activity android:name=".activity.popupWindowDemo.PopupWindowAct" />
+        <activity android:name=".activity.menu.OptionsMenuDemoAct" />
+        <activity android:name=".activity.menu.SubMenuDemoAct" />
+        <activity android:name=".activity.menu.MenuDemo" />
+        <activity android:name=".activity.menu.ContextMenuDemoAct" />
+        <activity android:name=".activity.menu.PopupMenuDemoAct" />
+        <activity android:name=".activity.menu.CustomizeMenu" />
+        <activity android:name=".activity.fragment.FragmentDemoAct" />
+        <activity android:name=".activity.fragment.staticload.FragmentStaticLoadAct" />
+        <activity android:name=".activity.fragment.dynamicload.FragmentDynamicLoadAct" />
+        <activity android:name=".activity.fragment.fragmentPractice1.BottomNvgWithTextView" />
+        <activity android:name=".activity.fragment.fragmentPractice2.BottomNvgWithRadioButton" />
+        <activity android:name=".activity.fragment.fragmentPractice3.BottomNvgTVwithNumberAct" />
+        <activity android:name=".activity.fragment.fragmentPractice4.BottomNvgViewPageAct" />
+        <activity android:name=".activity.styleDevelop.StyleDevelopDemoAct" />
+        <activity android:name=".module.ModuleDemoAct" />
+        <activity android:name=".activity.ninePatchDemo.NinePatchDrawAct" />
+        <activity android:name=".activity.webview.WebViewDemoAct" />
+        <activity android:name=".activity.webview.WebView00" />
+        <activity android:name=".activity.webview.WebView01" />
+        <activity android:name=".activity.webview.WebViewScrollChanged" />
+        <activity android:name=".activity.webview.WebViewZoomAct" />
+        <activity android:name=".activity.webview.WebView_Js_inter.WebViewAndJs01" />
+        <activity android:name=".activity.webview.WebView_Js_inter.WebviewJS02" />
+        <activity android:name=".activity.webview.WebView_Js_inter.WebViewReadContactsAct" />
+        <activity android:name=".activity.webview.WebView_Download.WebViewDownload" />
+        <activity android:name=".activity.webview.WebView_Download.WebViewDownLoadWithSelfThread" />
+        <activity android:name=".activity.webview.WebView_Cache.WebViewCacheAct" />
+        <activity android:name=".activity.socket.baseuse.SocketClientAct" />
+        <activity android:name=".activity.socket.SocketDemoAct" />
+        <activity android:name=".activity.systemManager.SystemManagerDemoAct"></activity>
     </application>
 
 </manifest>

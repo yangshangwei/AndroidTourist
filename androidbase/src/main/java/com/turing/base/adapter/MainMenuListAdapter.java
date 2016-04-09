@@ -30,6 +30,7 @@ public class MainMenuListAdapter extends BaseAdapter {
         this.mContext = context;
         this.mDataList = (List<MainMenuListItemBean>) dataList;
         this.mInflate = LayoutInflater.from(context);
+
     }
 
     //数据源中的数据对象个数

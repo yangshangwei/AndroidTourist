@@ -39,15 +39,17 @@ dependencies {
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
 
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.apkfuns.logutils:library:1.0.6'
-    compile 'com.android.support:design:23.0.1'
-
     // 使用HttpClient传递文件需要添加的依赖
+
+
+    compile files(
+            'libs/commoms-lang.jar')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.apkfuns.logutils:library:1.0.6'
+    compile 'com.android.support:design:23.1.1'
     compile 'org.apache.httpcomponents:httpcore:4.3.3'
     compile 'org.apache.httpcomponents:httpmime:4.3.6'
-
-    compile files('libs/commoms-lang.jar')
+    compile 'com.android.support:support-v4:23.1.1'
 }
 
 apt {

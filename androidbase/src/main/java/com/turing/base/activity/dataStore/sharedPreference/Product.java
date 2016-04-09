@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * @author Mr.Yang on 2016-02-21  17:08.
  * @version 1.0
- * @desc
+ * @desc  必须可序列化，需要实现Serializable
  */
 public class Product implements Serializable
 {

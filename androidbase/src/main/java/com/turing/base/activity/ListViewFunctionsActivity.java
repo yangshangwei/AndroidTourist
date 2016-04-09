@@ -39,8 +39,8 @@ public class ListViewFunctionsActivity extends Activity {
     @ViewById(R.id.id_listview_functions)
     ListView listView;
 
-    List<MainMenuListItemBean> dataList ;
-    MainMenuListAdapter adapter ;
+    List<MainMenuListItemBean> dataList;
+    MainMenuListAdapter adapter;
     // ListView中显示的内容
     public static String[] datas = new String[]{
             "ViewHoder模式",
@@ -67,12 +67,13 @@ public class ListViewFunctionsActivity extends Activity {
         // 设置adapter
         listView.setAdapter(adapter);
 
+        listView.setEmptyView(findViewById(R.id.empty_view));
 
         // 监听事件
         listView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()){
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         LogUtils.d("ACTION_DOWN");
                         break;
@@ -93,7 +94,7 @@ public class ListViewFunctionsActivity extends Activity {
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                switch (scrollState){
+                switch (scrollState) {
                     case SCROLL_STATE_IDLE:
                         LogUtils.d("滚动停止SCROLL_STATE_IDLE");
                         break;
@@ -114,14 +115,14 @@ public class ListViewFunctionsActivity extends Activity {
     }
 
     /**
-     *ListView点击监听事件
+     * ListView点击监听事件
      */
     @ItemClick(R.id.id_listview_functions)
-    public void itemClickHandle(int position){
-        switch(position){
+    public void itemClickHandle(int position) {
+        switch (position) {
             case 0: // ViewHolder
                 LogUtils.d(position);
-                Toast.makeText(ListViewFunctionsActivity.this,"详见本ListView加载的代码",Toast.LENGTH_LONG).show();
+                Toast.makeText(ListViewFunctionsActivity.this, "详见本ListView加载的代码", Toast.LENGTH_LONG).show();
                 break;
             case 1:// 设置项目间分隔线
                 LogUtils.d(position);
@@ -158,31 +159,31 @@ public class ListViewFunctionsActivity extends Activity {
             case 5:// 动态修改ListView
                 LogUtils.d(position);
                 // 模拟增加一条数据
-                datas = (String[])ArrayUtils.add(datas, "数组增加");
+                datas = (String[]) ArrayUtils.add(datas, "数组增加");
 
                 dataList.clear();
                 dataList.addAll((Collection<? extends MainMenuListItemBean>) ListViewDataFactory.simulateData(datas));
 
                 adapter.notifyDataSetChanged();
 
-                listView.setSelection(datas.length-1);
+                listView.setSelection(datas.length - 1);
 
                 showInfo();
                 break;
             case 6:// 遍历ListView中所有的Item
                 LogUtils.d(position);
-               for(int i = 0 ;i < listView.getChildCount();i++){
-                   View view = listView.getChildAt(i);
-                   view.setBackgroundColor(Color.BLUE);
-               }
+                for (int i = 0; i < listView.getChildCount(); i++) {
+                    View view = listView.getChildAt(i);
+                    view.setBackgroundColor(Color.BLUE);
+                }
                 break;
             case 7:// 处理空ListView
                 LogUtils.d(position);
                 // 模拟数据为空的情况
                 dataList.clear();
                 adapter.notifyDataSetChanged();
-                // 设置空的时候的提示
-                listView.setEmptyView(findViewById(R.id.id_iv_empty_listView));
+                // 设置空的时候的提示 ,需要放到加载ListView的地方
+//                listView.setEmptyView(findViewById(R.id.empty_view));
                 break;
             case 8:// ListView的滑动监听  TODO
                 LogUtils.d(position);
@@ -206,12 +207,10 @@ public class ListViewFunctionsActivity extends Activity {
     }
 
 
-
-
     /**
      * 提示信息
      */
-    public void showInfo(){
-     Toast.makeText(ListViewFunctionsActivity.this,"设置成功",Toast.LENGTH_LONG).show();
+    public void showInfo() {
+        Toast.makeText(ListViewFunctionsActivity.this, "设置成功", Toast.LENGTH_LONG).show();
     }
 }
