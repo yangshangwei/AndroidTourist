@@ -280,7 +280,16 @@
         <activity android:name=".activity.webview.WebView_Cache.WebViewCacheAct" />
         <activity android:name=".activity.socket.baseuse.SocketClientAct" />
         <activity android:name=".activity.socket.SocketDemoAct" />
-        <activity android:name=".activity.systemManager.SystemManagerDemoAct"></activity>
+        <activity android:name=".activity.systemManager.SystemManagerDemoAct" />
+        <activity android:name=".android_hero.AndroidHeroDemoAct" />
+        <activity android:name=".android_hero.chapter5_Scroll.AndroidScroll" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_Layout" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_Layout2" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_offsetLRTB" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_LayoutParams" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_scrolltoScrollBy" />
+        <activity android:name=".android_hero.chapter5_Scroll.Scroll_Scroller" />
+        <activity android:name=".android_hero.chapter5_Scroll.DragView_ViewHelper"></activity>
     </application>
 
 </manifest>

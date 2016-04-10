@@ -19,6 +19,7 @@ import com.turing.base.activity.socket.SocketDemoAct;
 import com.turing.base.activity.styleDevelop.StyleDevelopDemoAct;
 import com.turing.base.activity.systemManager.SystemManagerDemoAct;
 import com.turing.base.adapter.MainMenuListAdapter;
+import com.turing.base.android_hero.AndroidHeroDemoAct;
 import com.turing.base.module.ModuleDemoAct;
 import com.turing.base.utils.ListViewDataFactory;
 
@@ -72,7 +73,7 @@ public class MainActivity extends Activity {
             "Google DataBinding",
             "Socket",
             "相关系统服务",
-            "待添加....."};
+            "Android群英传学习代码"};
 
     @AfterViews
     public void showMenuList() {
@@ -147,6 +148,9 @@ public class MainActivity extends Activity {
                 break;
             case 20: // 系统服务
                 startActivity(new Intent(MainActivity.this, SystemManagerDemoAct.class));
+                break;
+            case 21:// Android群英传学习代码
+                startActivity(new Intent(MainActivity.this, AndroidHeroDemoAct.class));
                 break;
             default:
                 break;
