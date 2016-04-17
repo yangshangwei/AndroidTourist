@@ -289,7 +289,20 @@
         <activity android:name=".android_hero.chapter5_Scroll.Scroll_LayoutParams" />
         <activity android:name=".android_hero.chapter5_Scroll.Scroll_scrolltoScrollBy" />
         <activity android:name=".android_hero.chapter5_Scroll.Scroll_Scroller" />
-        <activity android:name=".android_hero.chapter5_Scroll.DragView_ViewHelper"></activity>
+        <activity android:name=".android_hero.chapter5_Scroll.DragView_ViewHelper" />
+        <activity android:name=".android_hero.chapter6_Draw.CanvasDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.paint.PaintAttrsAct" />
+        <activity android:name=".android_hero.chapter6_Draw.PaintAndCanvasDemosAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.Animation_startNow" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.Animation_cancel" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.RotateAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.ScaleAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.AlaphAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationSetDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationUtilsDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_start" />
+        <activity android:name=".android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_addFrame"></activity>
     </application>
 
 </manifest>

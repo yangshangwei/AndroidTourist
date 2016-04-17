@@ -9,6 +9,7 @@ import android.widget.SimpleAdapter;
 
 import com.turing.base.R;
 import com.turing.base.android_hero.chapter5_Scroll.AndroidScroll;
+import com.turing.base.android_hero.chapter6_Draw.PaintAndCanvasDemosAct;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +20,8 @@ public class AndroidHeroDemoAct extends ListActivity {
 
     // ListView中要显示的item
     private String[] arr = new String[]{
-            "Android Scroll分析"
+            "Android Scroll分析",
+            "Android 绘图机制与处理技巧"
     };
 
     @Override
@@ -52,7 +54,8 @@ public class AndroidHeroDemoAct extends ListActivity {
                     case 0:// Scroll分析
                         startActivity(new Intent(AndroidHeroDemoAct.this, AndroidScroll.class));
                         break;
-                    case 1:
+                    case 1:// Android 绘图机制与处理技巧
+                        startActivity(new Intent(AndroidHeroDemoAct.this, PaintAndCanvasDemosAct.class));
                         break;
                     default:
                         break;

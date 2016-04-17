@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_btn_startAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始帧动画" />
+
+    <Button
+        android:id="@+id/id_btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_btn_startAnimation"
+        android:text="停止帧动画" />
+
+    <ImageView
+        android:id="@+id/id_iv_horse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_btn_stop"
+        android:background="@drawable/anim_zhuzhen" />
+
+</RelativeLayout>
