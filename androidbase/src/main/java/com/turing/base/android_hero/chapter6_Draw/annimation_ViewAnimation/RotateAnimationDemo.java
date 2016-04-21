@@ -1,4 +1,4 @@
-package com.turing.base.android_hero.chapter6_Draw.annimation;
+package com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

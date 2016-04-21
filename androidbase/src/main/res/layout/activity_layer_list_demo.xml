@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0EEEE"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="TAB1"
+            android:textColor="@color/text_tab_selector" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="TAB2"
+            android:textColor="@color/text_tab_selector" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="TAB3"
+            android:textColor="@color/text_tab_selector" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_shadow_corners_rectangle"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="带阴影的圆角矩形-1" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_shadow_corners_rectangle"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="带阴影的圆角矩形-2" />
+</LinearLayout>

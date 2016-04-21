@@ -10,13 +10,14 @@ import android.widget.SimpleAdapter;
 import com.turing.base.R;
 import com.turing.base.android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_addFrame;
 import com.turing.base.android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_start;
-import com.turing.base.android_hero.chapter6_Draw.annimation.AlaphAnimationDemo;
-import com.turing.base.android_hero.chapter6_Draw.annimation.AnimationDemoAct;
-import com.turing.base.android_hero.chapter6_Draw.annimation.AnimationSetDemo;
-import com.turing.base.android_hero.chapter6_Draw.annimation.AnimationUtilsDemo;
-import com.turing.base.android_hero.chapter6_Draw.annimation.RotateAnimationDemo;
-import com.turing.base.android_hero.chapter6_Draw.annimation.ScaleAnimationDemo;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.AlaphAnimationDemo;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationDemoAct;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationSetDemo;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationUtilsDemo;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.RotateAnimationDemo;
+import com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation.ScaleAnimationDemo;
 import com.turing.base.android_hero.chapter6_Draw.paint.PaintAttrsAct;
+import com.turing.base.android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationDemoAct;
 import com.turing.base.utils.AlertUtil;
 
 import java.util.ArrayList;
@@ -36,13 +37,15 @@ public class PaintAndCanvasDemosAct extends ListActivity {
             "AlphaAnimation类：透明度变化动",
             "AnimationSet类：动画集合类",
             "AnimationUtils类：动画工具类",
-            "【以上是补间动画Tween Animation,下面演示帧动画AnimationDrawable】",
+            "【以上是补间动画Tween Animation(SDK中称为View Animation),下面演示帧动画Frame Animation(SDK中称为DrawableAnimation)】",
             "AnimationDrawable-start方法：开始动画",
             "AnimationDrawable-stop方法：停止动画",
             "AnimationDrawable-addFrame方法：添加动画帧",
             "AnimationDrawable-setOneShot方法：设置播放方式",
             "AnimationDrawable-setAlpha方法：设置透明度",
-            "AnimationDrawable-getNumberOfFrames方法：获取帧"
+            "AnimationDrawable-getNumberOfFrames方法：获取帧",
+            "【下面演示3.0中新增的属性动画PropertyAnimation,低版本可以使用nineoldandroids动画库来使用】",
+            "属性动画-PropertyAnimation"
     };
 
     @Override
@@ -103,16 +106,22 @@ public class PaintAndCanvasDemosAct extends ListActivity {
                         startActivity(new Intent(PaintAndCanvasDemosAct.this, AnimationDrawable_start.class));
                         break;
                     case 10://AnimationDrawable-stop方法：停止动画
-                        AlertUtil.showDialogWithClose(PaintAndCanvasDemosAct.this,"参考start方法中的 停止功能 ");
+                        AlertUtil.showDialogWithClose(PaintAndCanvasDemosAct.this, "参考start方法中的 停止功能 ");
                         break;
                     case 11://AnimationDrawable-addFrame方法：添加动画帧
                         startActivity(new Intent(PaintAndCanvasDemosAct.this, AnimationDrawable_addFrame.class));
                         break;
                     case 12://AnimationDrawable-setOneShot方法：设置播放方式
+                        AlertUtil.showDialogWithClose(PaintAndCanvasDemosAct.this, "代码都写在了addFrame中 ");
                         break;
                     case 13://AnimationDrawable-setAlpha方法：设置透明度
+                        AlertUtil.showDialogWithClose(PaintAndCanvasDemosAct.this, "代码都写在了addFrame中 ");
                         break;
                     case 14://AnimationDrawable-getNumberOfFrames方法：获取帧
+                        AlertUtil.showDialogWithClose(PaintAndCanvasDemosAct.this, "代码都写在了addFrame中 ");
+                        break;
+                    case 16:// PropertyAnimation
+                        startActivity(new Intent(PaintAndCanvasDemosAct.this, PropertyAnimationDemoAct.class));
                         break;
                     default:
                         break;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- 第一种加载方式 -->
+    <!--   <item android:drawable="@drawable/bg_tab_selected"
+      android:state_checked="true" />>-->
+    <!--  <item android:drawable="@drawable/bg_tab_unselected" />-->
+
+
+    <!-- 第二种加载方式 -->
+
+    <!--选中的时候-->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- 红色底 -->
+            <item>
+                <color android:color="#E4007F" />
+            </item>
+            <!-- 白色背景 -->
+            <item android:bottom="4dp" android:drawable="@android:color/white" />
+        </layer-list>
+
+    </item>
+
+    <!--非选中的时候-->
+    <item>
+        <layer-list>
+            <item>
+                <color android:color="#E4007F" />
+            </item>
+            <item android:bottom="1dp">
+                <color android:color="@android:color/white" />
+            </item>
+        </layer-list>
+    </item>
+
+
+</selector>

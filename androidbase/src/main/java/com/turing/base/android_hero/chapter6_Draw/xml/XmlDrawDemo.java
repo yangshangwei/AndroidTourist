@@ -1,4 +1,4 @@
-package com.turing.base.android_hero;
+package com.turing.base.android_hero.chapter6_Draw.xml;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -8,22 +8,22 @@ import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
 
 import com.turing.base.R;
-import com.turing.base.android_hero.chapter5_Scroll.AndroidScroll;
-import com.turing.base.android_hero.chapter6_Draw.PaintAndCanvasDemosAct;
-import com.turing.base.android_hero.chapter6_Draw.xml.XmlDrawDemo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AndroidHeroDemoAct extends ListActivity {
-
+public class XmlDrawDemo extends ListActivity {
     // ListView中要显示的item
     private String[] arr = new String[]{
-            "Android Scroll分析",
-            "Android 三种动画",
-            "Android XML绘图"
+            "Bitmap",
+            "Shape-Rectangle",
+            "Shape-Oval",
+            "Shape-line",
+            "Shape-ring",
+            "Layer",
+            "Selector"
     };
 
     @Override
@@ -53,14 +53,26 @@ public class AndroidHeroDemoAct extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0:// Scroll分析
-                        startActivity(new Intent(AndroidHeroDemoAct.this, AndroidScroll.class));
+                    case 0://Bitmap
+                        startActivity(new Intent(XmlDrawDemo.this, Xml2Bitmap.class));
                         break;
-                    case 1:// Android 三种动画
-                        startActivity(new Intent(AndroidHeroDemoAct.this, PaintAndCanvasDemosAct.class));
+                    case 1://Shape-Rectangle
+                        startActivity(new Intent(XmlDrawDemo.this, ShapeRectangleDemoAct.class));
                         break;
-                    case 2:// XML绘图
-                        startActivity(new Intent(AndroidHeroDemoAct.this, XmlDrawDemo.class));
+                    case 2:// Shape-Oval
+                        startActivity(new Intent(XmlDrawDemo.this, ShapeOvalDemoAct.class));
+                        break;
+                    case 3:// Shape-line
+                        startActivity(new Intent(XmlDrawDemo.this, ShapeLineDemoAct.class));
+                        break;
+                    case 4:// Shape-ring
+                        startActivity(new Intent(XmlDrawDemo.this, ShapeRingDemoAct.class));
+                        break;
+                    case 5:// Layer
+                        startActivity(new Intent(XmlDrawDemo.this, LayerListDemoAct.class));
+                        break;
+                    case 6:// Selector
+                        startActivity(new Intent(XmlDrawDemo.this,SelectorDemoAct.class));
                         break;
                     default:
                         break;
@@ -76,7 +88,7 @@ public class AndroidHeroDemoAct extends ListActivity {
 
         for (int i = 0; i < arr.length; i++) {
             Map<String, Object> item = new HashMap<String, Object>();
-            item.put("img", R.drawable.gur_project_8);
+            item.put("img", R.drawable.gur_project_4);
             item.put("info", arr[i]);
             // 将Map添加到List
             datalist.add(item);

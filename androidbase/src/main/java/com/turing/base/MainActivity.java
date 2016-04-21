@@ -141,7 +141,7 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, ModuleDemoAct.class));
                 break;
             case 18:// Google DataBinding
-                Toast.makeText(this,"待学习",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"http://blog.csdn.net/qian1127/article/details/51191956",Toast.LENGTH_SHORT).show();
                 break;
             case 19: // Socket
                 startActivity(new Intent(MainActivity.this, SocketDemoAct.class));

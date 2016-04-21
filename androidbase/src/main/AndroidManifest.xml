@@ -293,16 +293,29 @@
         <activity android:name=".android_hero.chapter6_Draw.CanvasDemo" />
         <activity android:name=".android_hero.chapter6_Draw.paint.PaintAttrsAct" />
         <activity android:name=".android_hero.chapter6_Draw.PaintAndCanvasDemosAct" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationDemoAct" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.Animation_startNow" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.Animation_cancel" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.RotateAnimationDemo" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.ScaleAnimationDemo" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.AlaphAnimationDemo" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationSetDemo" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation.AnimationUtilsDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.Animation_startNow" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.Animation_cancel" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.RotateAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.ScaleAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.AlaphAnimationDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationSetDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_ViewAnimation.AnimationUtilsDemo" />
         <activity android:name=".android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_start" />
-        <activity android:name=".android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_addFrame"></activity>
+        <activity android:name=".android_hero.chapter6_Draw.animationDrawable.AnimationDrawable_addFrame" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.Xml2Bitmap" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.XmlDrawDemo" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.ShapeRectangleDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.ShapeOvalDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.ShapeLineDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.ShapeRingDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.LayerListDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.xml.SelectorDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationDemoAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationInfo" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.ValueAnimatorByXmlAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.ObjectAnimatorByXmlAct" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationActvity"></activity>
     </application>
 
 </manifest>

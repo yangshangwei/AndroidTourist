@@ -1,4 +1,4 @@
-package com.turing.base.android_hero.chapter6_Draw.annimation;
+package com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation;
 
 import android.app.ListActivity;
 import android.content.Intent;

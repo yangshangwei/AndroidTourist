@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="500" android:exitFadeDuration="500">
+    <!-- 当前窗口失去焦点时 -->
+    <item android:drawable="@drawable/bg_btn_lost_window_focused" android:state_window_focused="false" />
+    <!-- 不可用时 -->
+    <item android:drawable="@drawable/bg_btn_disable" android:state_enabled="false" />
+    <!-- 按压时 -->
+    <item android:drawable="@drawable/bg_btn_pressed" android:state_pressed="true" />
+    <!-- 被选中时 -->
+    <item android:drawable="@drawable/bg_btn_selected" android:state_selected="true" />
+    <!-- 被激活时 -->
+    <item android:drawable="@drawable/bg_btn_activated" android:state_activated="true" />
+    <!-- 默认时 -->
+    <item android:drawable="@drawable/bg_btn_normal" />
+</selector>

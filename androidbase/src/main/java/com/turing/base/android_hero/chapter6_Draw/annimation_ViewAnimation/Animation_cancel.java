@@ -1,4 +1,4 @@
-package com.turing.base.android_hero.chapter6_Draw.annimation;
+package com.turing.base.android_hero.chapter6_Draw.annimation_ViewAnimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +25,7 @@ public class Animation_cancel extends AppCompatActivity implements View.OnClickL
     boolean fillBefore = false;
     boolean fillAfter = false;
     boolean repeatMode;
-    boolean startOffset ;
+    boolean startOffset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +44,23 @@ public class Animation_cancel extends AppCompatActivity implements View.OnClickL
         fillBefore = getIntent().getBooleanExtra("fillBefore", false);
         fillAfter = getIntent().getBooleanExtra("fillAfter", false);
         repeatMode = getIntent().getBooleanExtra("repeatMode", false);
-        startOffset  = getIntent().getBooleanExtra("startOffset", false);
+        startOffset = getIntent().getBooleanExtra("startOffset", false);
         LogUtils.d("repeat:" + repeat + "\nfillBefore:" + fillBefore
                 + "\nfillAfter:" + fillAfter + "\nrepeatMode:" + repeatMode
                 + "\nstartOffset:" + startOffset);
 
         // 设置 移动效果
         translateAnimation = new TranslateAnimation(0, 200, 0, 200);
+
+
+        mIdIvFlag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertUtil.showDialogWithClose(Animation_cancel.this, "视图动画只能作用于View，而且视图动画改变的只是View的绘制效果，" +
+                        "View真正的属性并没有改变。" +
+                        "比如，一个按钮做平移的动画，虽然按钮的确做了平移，但按钮可点击的区域并没随着平移而改变，还是在原来的位置");
+            }
+        });
     }
 
     /**
@@ -94,7 +104,7 @@ public class Animation_cancel extends AppCompatActivity implements View.OnClickL
                     AlertUtil.showToastShort(Animation_cancel.this, "repeatMode 反方向执行");
                 }
                 // 设置启动时间
-                if (startOffset){
+                if (startOffset) {
                     translateAnimation.setStartOffset(3000);  //设置启动时间
                     AlertUtil.showToastShort(Animation_cancel.this, "setStartOffset 延迟3S执行动画");
                 }
