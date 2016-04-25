@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_rl_relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:padding="16dp">
 
 
     <ListView
         android:id="@+id/id_lv_popupWindowListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view"
+        android:background="@drawable/bg_listview" />
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_below="@id/id_lv_popupWindowListView"
-        android:layout_height="50dp"/>
-    
+        android:layout_height="20dp"
+        android:layout_above="@+id/id_tv_bottom"
+        android:background="@color/transparent" />
+
     <TextView
+        android:id="@+id/id_tv_bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="取消"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/bg_cancel"
-        android:layout_below="@id/view"/>
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/skyblue"
+        android:textSize="20dp" />
 
 </RelativeLayout>

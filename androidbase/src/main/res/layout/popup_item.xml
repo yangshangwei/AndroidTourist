@@ -8,6 +8,10 @@
     <TextView
         android:id="@+id/id_tv_popupItemText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="@color/skyblue"
+        android:textSize="20dp" />
 
 </LinearLayout>
