@@ -19,4 +19,10 @@
 
 
     <color name="bg1">#0099cc</color>
+
+
+
+    <color name="grey">#969696</color>
+    <color name="white">#ffffff</color>
+    <color name="skyblue">#00aff0</color>
 </resources>

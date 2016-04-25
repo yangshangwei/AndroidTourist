@@ -64,14 +64,16 @@ public class PropertyAnimationDemoAct extends ListActivity {
                         startActivity(new Intent(PropertyAnimationDemoAct.this, PropertyAnimationActvity.class));
                         break;
                     case 2://<animator>-xml方式
-                        startActivity(new Intent(PropertyAnimationDemoAct.this,ValueAnimatorByXmlAct.class));
+                        startActivity(new Intent(PropertyAnimationDemoAct.this, ValueAnimatorByXmlAct.class));
                         break;
                     case 3://<objectAnimator>-xml方式
+                        startActivity(new Intent(PropertyAnimationDemoAct.this, ObjectAnimatorByXmlAct.class));
                         break;
                     case 4://<set>-xml方式
+                        startActivity(new Intent(PropertyAnimationDemoAct.this, AnimatorSetByXmlAct.class));
                         break;
                     case 5://
-                        AlertUtil.showToastShort(PropertyAnimationDemoAct.this, "我只是个分隔线");
+                        AlertUtil.showToastShort(PropertyAnimationDemoAct.this, "好吧 我只是个分隔线");
                         break;
                     case 6:// ValueAnimator-在代码中创建PropertyAnimation
                         break;

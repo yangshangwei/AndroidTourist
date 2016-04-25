@@ -1,4 +1,4 @@
-package com.turing.base.module.pullToRefresh;
+package com.turing.module.pullToRefresh;
 
 import android.content.Context;
 import android.util.AttributeSet;

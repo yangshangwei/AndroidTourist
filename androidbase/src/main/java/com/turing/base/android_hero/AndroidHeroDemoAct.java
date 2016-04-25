@@ -10,6 +10,10 @@ import android.widget.SimpleAdapter;
 import com.turing.base.R;
 import com.turing.base.android_hero.chapter5_Scroll.AndroidScroll;
 import com.turing.base.android_hero.chapter6_Draw.PaintAndCanvasDemosAct;
+import com.turing.base.android_hero.chapter6_Draw.layer.LayerDemoActivity;
+import com.turing.base.android_hero.chapter6_Draw.surfaceView.SimpleDrawCustomViewAct;
+import com.turing.base.android_hero.chapter6_Draw.surfaceView.SimpleDrawSurfaceViewAct;
+import com.turing.base.android_hero.chapter6_Draw.surfaceView.SinViewAct;
 import com.turing.base.android_hero.chapter6_Draw.xml.XmlDrawDemo;
 
 import java.util.ArrayList;
@@ -22,8 +26,12 @@ public class AndroidHeroDemoAct extends ListActivity {
     // ListView中要显示的item
     private String[] arr = new String[]{
             "Android Scroll分析",
-            "Android 三种动画",
-            "Android XML绘图"
+            "Android 三种动画(ViewAnimation/DrawableAnimation/PropertyAnimation)",
+            "Android XML绘图(Canvas + Paint)",
+            "Android 绘图技巧之Layer图层",
+            "SurfaceView-绘画板",
+            "SurfaceView-正弦曲线",
+            "自定义View-绘画板"
     };
 
     @Override
@@ -61,6 +69,18 @@ public class AndroidHeroDemoAct extends ListActivity {
                         break;
                     case 2:// XML绘图
                         startActivity(new Intent(AndroidHeroDemoAct.this, XmlDrawDemo.class));
+                        break;
+                    case 3:// Android 绘图技巧之Layer图层
+                        startActivity(new Intent(AndroidHeroDemoAct.this, LayerDemoActivity.class));
+                        break;
+                    case 4:// SurfaceView-绘画板
+                        startActivity(new Intent(AndroidHeroDemoAct.this, SimpleDrawSurfaceViewAct.class));
+                        break;
+                    case 5:// SurfaceView-正弦曲线
+                        startActivity(new Intent(AndroidHeroDemoAct.this, SinViewAct.class));
+                        break;
+                    case 6:// 自定义View-绘画板
+                        startActivity(new Intent(AndroidHeroDemoAct.this, SimpleDrawCustomViewAct.class));
                         break;
                     default:
                         break;

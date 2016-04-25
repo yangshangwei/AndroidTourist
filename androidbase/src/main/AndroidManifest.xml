@@ -265,7 +265,7 @@
         <activity android:name=".activity.fragment.fragmentPractice3.BottomNvgTVwithNumberAct" />
         <activity android:name=".activity.fragment.fragmentPractice4.BottomNvgViewPageAct" />
         <activity android:name=".activity.styleDevelop.StyleDevelopDemoAct" />
-        <activity android:name=".module.ModuleDemoAct" />
+        <activity android:name="com.turing.module.ModuleDemoAct" />
         <activity android:name=".activity.ninePatchDemo.NinePatchDrawAct" />
         <activity android:name=".activity.webview.WebViewDemoAct" />
         <activity android:name=".activity.webview.WebView00" />
@@ -315,7 +315,14 @@
         <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationInfo" />
         <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.ValueAnimatorByXmlAct" />
         <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.ObjectAnimatorByXmlAct" />
-        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationActvity"></activity>
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.PropertyAnimationActvity" />
+        <activity android:name=".android_hero.chapter6_Draw.annimation_propertyAnimation.AnimatorSetByXmlAct" />
+        <activity android:name=".android_hero.chapter6_Draw.layer.LayerDemoActivity" />
+        <activity android:name=".android_hero.chapter6_Draw.surfaceView.SimpleDrawSurfaceViewAct" />
+        <activity android:name=".android_hero.chapter6_Draw.surfaceView.SimpleDrawCustomViewAct" />
+        <activity android:name=".android_hero.chapter6_Draw.surfaceView.SinViewAct" />
+        <activity android:name="com.turing.nutritiousSerial.listPopupWindow.test.ListPopupWindowDemoActivity"></activity>
+        <activity android:name="com.turing.nutritiousSerial.NutritiousSerialList"></activity>
     </application>
 
 </manifest>
