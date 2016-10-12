@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!--
+    一个具有渐变区域的Drawable，可以实现线性渐变,发散渐变和平铺渐变效果
+      核心节点：<gradient/>，有如下可选属性：
+        startColor:渐变的起始颜色
+        centerColor:渐变的中间颜色
+        endColor:渐变的结束颜色
+        type:渐变类型,可选(linear,radial,sweep), 线性渐变(可设置渐变角度),发散渐变(中间向四周发散),平铺渐变
+        centerX:渐变中间亚瑟的x坐标,取值范围为:0~1
+        centerY:渐变中间颜色的Y坐标,取值范围为:0~1
+        angle:只有linear类型的渐变才有效,表示渐变角度,必须为45的倍数哦
+        gradientRadius:只有radial和sweep类型的渐变才有效,radial必须设置,表示渐变效果的半径
+        useLevel:判断是否根据level绘制渐变效果
+    -->
+
+    <gradient
+        android:angle="90"
+        android:centerColor="#00ff00"
+        android:endColor="#0000ff"
+        android:startColor="#ff0000" />
+
+    <!--描边-->
+    <stroke
+        android:width="3dip"
+        android:color="#fff"
+        android:dashGap="5dip"
+        android:dashWidth="4dip" />
+</shape>

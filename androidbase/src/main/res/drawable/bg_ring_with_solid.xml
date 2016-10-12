@@ -4,5 +4,8 @@
     android:shape="ring"
     android:thicknessRatio="9"
     android:useLevel="false">
+
+    <gradient
+        android:type="linear"/>
     <solid android:color="#FF0000" />
 </shape>

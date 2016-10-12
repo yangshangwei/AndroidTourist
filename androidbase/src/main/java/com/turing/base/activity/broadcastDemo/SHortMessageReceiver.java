@@ -87,4 +87,7 @@ public class ShortMessageReceiver extends BroadcastReceiver {
         }
         return null;
     }
+
+
+
 }

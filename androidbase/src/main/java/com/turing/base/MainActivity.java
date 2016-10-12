@@ -11,7 +11,9 @@ import com.turing.base.activity.ListViewFunctionsActivity_;
 import com.turing.base.activity.UI_Base_;
 import com.turing.base.activity.activityDemo.ActivityDemoList;
 import com.turing.base.activity.broadcastDemo.BroadcastDemoAct;
+import com.turing.base.activity.customView.CustomViewDemosActivity;
 import com.turing.base.activity.dataStore.DataStoreListDemoAct;
+import com.turing.base.activity.drawable.DrawableDemoList;
 import com.turing.base.activity.fragment.FragmentDemoAct;
 import com.turing.base.activity.menu.MenuDemo;
 import com.turing.base.activity.service.ServiceDemoAct;
@@ -52,30 +54,31 @@ public class MainActivity extends Activity {
 
 
     // ListView中显示的内容
-    public static String[] datas = new String[]{
-            "网络与通信",
-            "ListView使用技巧",
-            "Android控件架构与自定义控件",
-            "Widget详解",
-            "Service",
-            "全局事件--BroadcastReceiver",
-            "Content Provider",
-            "Activity",
-            "友好的互动提醒--对话框、Toast、Notification",
-            "友好的菜单--Menu",
-            "移动的信息仓库--数据存储",
-            "多媒体开发",
-            "Fragment",
-            "Android样式",
-            "图片管理策略~",
-            "动画效果",
-            "自定义View",
-            "常用组件~",
-            "Google DataBinding",
-            "Socket",
-            "相关系统服务",
-            "AndroidHerosCode",
-            "干货系列"
+    protected final static String[] datas = new String[]{
+            "【网络与通信】",
+            "【ListView使用技巧】",
+            "【Android控件架构与自定义控件】",
+            "【Widget详解】",
+            "【Service】",
+            "【BroadcastReceiver】",
+            "【Content Provider-TODO】",
+            "【Activity】",
+            "【友好的互动提醒--对话框、Toast、Notification】",
+            "【友好的菜单--Menu】",
+            "【移动的信息仓库--数据存储】",
+            "【多媒体开发】",
+            "【Fragment】",
+            "【Android样式】",
+            "【各种Drawable-Java代码+xml】",
+            "【.....】",
+            "【爱哥自定义View-ing】",
+            "【主流框架组件-TODO】",
+            "【Google DataBinding-TODO】",
+            "【Socket】",
+            "【相关系统服务】",
+            "【AndroidHerosCode】",
+            "【干货系列】"
+
     };
 
     @AfterViews
@@ -131,20 +134,20 @@ public class MainActivity extends Activity {
             case 13: // Android样式
                 startActivity(new Intent(MainActivity.this, StyleDevelopDemoAct.class));
                 break;
-            case 14:// 图片管理策略
-                Toast.makeText(this,"待学习",Toast.LENGTH_SHORT).show();
+            case 14:// 各种Drawable-Java代码+xml
+                startActivity(new Intent(MainActivity.this, DrawableDemoList.class));
                 break;
             case 15:// 动画效果
-                Toast.makeText(this,"待学习",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "待学习", Toast.LENGTH_SHORT).show();
                 break;
             case 16:// 自定义View
-                Toast.makeText(this,"待学习",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, CustomViewDemosActivity.class));
                 break;
-            case 17:// 常用组件
+            case 17:// 主流框架组件
                 startActivity(new Intent(MainActivity.this, ModuleDemoAct.class));
                 break;
             case 18:// Google DataBinding
-                Toast.makeText(this,"http://blog.csdn.net/qian1127/article/details/51191956",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "http://blog.csdn.net/qian1127/article/details/51191956", Toast.LENGTH_SHORT).show();
                 break;
             case 19: // Socket
                 startActivity(new Intent(MainActivity.this, SocketDemoAct.class));

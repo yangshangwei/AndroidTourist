@@ -14,6 +14,9 @@ import com.turing.nutritiousSerial.listPopupWindow.customPopupWindow.ListPopupWi
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * http://blog.csdn.net/lyhhj/article/details/50582900
+ */
 public class ListPopupWindowDemoActivity extends AppCompatActivity implements ListPopupWindow.OnPopubItemClickListener, ListPopupWindow.OnBottomTextViewClickListener {
 
     // 定义父View即PopupWindow依赖浮动的View

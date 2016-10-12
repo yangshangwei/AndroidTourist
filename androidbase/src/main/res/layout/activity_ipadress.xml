@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/get_wifi_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="获得WIFI IP"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/get_gprs_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="获得手机网络IP"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/get_wifi_ssid"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="获得WIfI-SSID"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/openSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="打开网络设置"
+        android:textSize="24sp" />
+
+</LinearLayout>

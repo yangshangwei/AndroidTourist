@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/view"
-        android:background="@drawable/bg_listview" />
+        android:background="@drawable/bg_menu" />
 
     <View
         android:id="@+id/view"
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_cancel"
+        android:background="@drawable/bg_menu"
         android:gravity="center"
         android:text="取消"
         android:textColor="@color/skyblue"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetBottom="60dp"
+    android:insetLeft="30dp"
+    android:insetRight="30dp"
+    android:insetTop="60dp"
+    android:visible="true">
+
+
+    <!--待会要插入的一个蓝色的矩形-->
+    <shape android:shape="rectangle">
+        <solid android:color="#0000ff" />
+    </shape>
+
+
+</inset>
