@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_0176da"
+        toolbar:logo="@mipmap/ic_launcher"
+        toolbar:navigationIcon="@mipmap/ic_drawer_home"
+        toolbar:popupTheme="@style/Theme.ToolBar.Base.ItemTextColor"
+        toolbar:subtitle="子标题"
+        toolbar:title="标题"
+        toolbar:titleTextColor="@color/color_red">
+
+        <!--自定义控件-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义控件" />
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
