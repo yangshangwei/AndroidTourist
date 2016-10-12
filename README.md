@@ -1,9 +1,24 @@
 # androidBase
-androidBase
- * android基础教程
- * <p/>
-* 不定期的加入一些优秀的开源框架，作为学习之用.
- * 再此向大神致敬，感谢开源！
+ 
+ * android基础教程，包括但不局限于：
+ ListView  
+ Widget  
+ Service  
+ BroadCastReceiver 
+ ContentProvider  
+ Activity  
+ Toast 
+ Notification  
+ Dialog  
+ Menu  
+ Drawable  
+ Fragment 
+ Style
+ 数据存储  
+ 网络和通信  
+ 多媒体   
+ 自定义控件
+ ......
+  
 
 
- *HTTP通信部分，简单的搭建了一个服务端，tomcat+servlet,来演示Post和Get请求的情况。
